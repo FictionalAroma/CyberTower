@@ -1,0 +1,62 @@
+{
+	"name": "SpawnPoint",
+	"plugin-id": "Sprite",
+	"sid": 745595677781008,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SpawnDelay",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 383324236404073
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 764979619410372
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 645378529528421
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 303272052218238
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6319315,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 958696290481117,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

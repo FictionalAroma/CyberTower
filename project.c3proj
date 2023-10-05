@@ -1,0 +1,442 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 35800,
+	"name": "Cyber Tower",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": true,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "NoSave",
+			"name": "No save",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Persist",
+			"name": "Persist",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Turret",
+			"name": "Turret",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "4thzevzzjx5",
+	"objectTypes": {
+		"items": [
+			"LocalStorage",
+			"LevelSelectPrev",
+			"LevelSelectNext"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "Input"
+			},
+			{
+				"items": [
+					"BasicEnemy",
+					"StatusText"
+				],
+				"subfolders": [],
+				"name": "Enemys"
+			},
+			{
+				"items": [
+					"basicTower",
+					"Bullet",
+					"basicTower2"
+				],
+				"subfolders": [],
+				"name": "Towers"
+			},
+			{
+				"items": [
+					"Level0Text",
+					"LevelSelectButton"
+				],
+				"subfolders": [],
+				"name": "MenuObjects"
+			},
+			{
+				"items": [
+					"LoadingText"
+				],
+				"subfolders": [],
+				"name": "Misc"
+			},
+			{
+				"items": [
+					"EndPoint",
+					"SpawnPoint",
+					"Tilemap"
+				],
+				"subfolders": [],
+				"name": "Level Layout"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"Enemy",
+			"Towers",
+			"Bullets"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Level0",
+			"LevelRepo",
+			"Splash",
+			"MainMenu",
+			"UIRepo"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [],
+				"name": "Levels"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"TowerSheet",
+			"MenuSheet",
+			"SplashSheet",
+			"globals"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 982841286633094,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "LevelSelect.js",
+					"type": "application/javascript",
+					"sid": 365320945164047,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "playerData.js",
+							"type": "application/javascript",
+							"sid": 287893485520838,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "levelData.js",
+							"type": "application/javascript",
+							"sid": 315851505810176,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Data"
+				}
+			]
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 666344780075469,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 972955078801401,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 131983669217052,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 197341681944135,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 260525495910184,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 756552743370196,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 438836159014299,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "SaveData.json",
+					"type": "application/json",
+					"sid": 521866227877186,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "LevelData.json",
+					"type": "application/json",
+					"sid": 757455994290996,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "levelselect.css",
+					"type": "text/css",
+					"sid": 346677465552601,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "0.0.1",
+		"author": "Lucy Daniels",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": true,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "cover",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "2d",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress-logo",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": true,
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "random"
+	},
+	"viewportWidth": 1600,
+	"viewportHeight": 720,
+	"firstLayout": "Splash"
+}

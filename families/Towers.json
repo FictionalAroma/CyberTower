@@ -1,0 +1,18 @@
+{
+	"name": "Towers",
+	"plugin-id": "Sprite",
+	"sid": 509489715009077,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "TowerTurret",
+			"sid": 856497193541988
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"basicTower",
+		"basicTower2"
+	]
+}

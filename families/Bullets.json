@@ -1,0 +1,25 @@
+{
+	"name": "Bullets",
+	"plugin-id": "Sprite",
+	"sid": 874679519097276,
+	"instanceVariables": [
+		{
+			"name": "TargetID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 365486292913491
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 565546063616534
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Bullet"
+	]
+}

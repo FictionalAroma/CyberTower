@@ -1,0 +1,27 @@
+{
+	"name": "LevelSelectButton",
+	"plugin-id": "Button",
+	"sid": 554302686059504,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "levelToLoad",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 265673761975858
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 879721396639937
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 948280246099914
+		}
+	]
+}

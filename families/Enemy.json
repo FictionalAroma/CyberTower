@@ -1,0 +1,47 @@
+{
+	"name": "Enemy",
+	"plugin-id": "Sprite",
+	"sid": 852711985324355,
+	"instanceVariables": [
+		{
+			"name": "NodesToMove",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 306534068885140
+		},
+		{
+			"name": "HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 471610046756196
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 330884405175344
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 831984474481550
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 704810389766902
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 274998497409842
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"BasicEnemy"
+	]
+}

@@ -1,0 +1,401 @@
+{
+	"name": "TowerSheet",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Set",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Enemy",
+							"sid": 683528865319102
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "Enemy",
+							"sid": 789394424974604,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "EndPoint.X",
+								"y": "EndPoint.Y"
+							}
+						}
+					],
+					"sid": 527559909322520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "Enemy",
+							"sid": 888050835155427,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-pathfinding-path",
+							"objectClass": "Enemy",
+							"sid": 830539261075026,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"mode": "add-waypoints"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 265419610232674,
+							"parameters": {
+								"instance-variable": "NodesToMove",
+								"value": "Enemy.Pathfinding.NodeCount"
+							}
+						}
+					],
+					"sid": 749199578470772
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-arrived",
+							"objectClass": "Enemy",
+							"sid": 978208548535095,
+							"behaviorType": "MoveTo"
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemy",
+							"sid": 549101044747913,
+							"parameters": {
+								"instance-variable": "NodesToMove",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 804401581086868,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 168509993121653,
+									"parameters": {
+										"instance-variable": "NodesToMove",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemy",
+									"sid": 538643073873844
+								}
+							],
+							"sid": 775298455717217
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-failed-to-find-path",
+							"objectClass": "Enemy",
+							"sid": 688041335775247,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "Enemy",
+							"sid": 282069514004980,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "2.0"
+							}
+						}
+					],
+					"sid": 802183906193617
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 790874425092357,
+							"parameters": {
+								"instance-variable": "HP",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy",
+							"sid": 657883008158117
+						}
+					],
+					"sid": 895570125699934
+				}
+			],
+			"sid": 532762927065989
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Spawner",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "SpawnPoint",
+							"sid": 933605869967247
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "SpawnPoint",
+							"sid": 320382270494864,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "SpawnPoint.SpawnDelay",
+								"type": "regular",
+								"tag": "\"Spawn\""
+							}
+						}
+					],
+					"sid": 214469635742809
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "SpawnPoint",
+							"sid": 372846042779466,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Spawn\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "SpawnPoint",
+							"sid": 393376835858604,
+							"parameters": {
+								"object": "BasicEnemy",
+								"layer": "\"Enemies\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "SpawnPoint",
+							"sid": 303648014250414,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.2"
+							}
+						}
+					],
+					"sid": 488307221108783
+				}
+			],
+			"sid": 562396490778459
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Towers",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Towers",
+							"sid": 138643451536226
+						}
+					],
+					"actions": [
+						{
+							"id": "add-object-to-target",
+							"objectClass": "Towers",
+							"sid": 366707494533211,
+							"behaviorType": "TowerTurret",
+							"parameters": {
+								"target": "Enemy"
+							}
+						}
+					],
+					"sid": 420995207125024
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "Towers",
+							"sid": 796553996962013,
+							"behaviorType": "TowerTurret"
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Towers",
+							"sid": 480563841779348,
+							"parameters": {
+								"object": "Bullet",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Bullet",
+							"sid": 432017648175490,
+							"parameters": {
+								"instance-variable": "TargetID",
+								"value": "Towers.TowerTurret.TargetUID"
+							}
+						}
+					],
+					"sid": 525528053433047
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 224696197501566,
+							"parameters": {
+								"object": "Bullets"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 432318964426587,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "Enemy",
+									"sid": 750712948391583,
+									"parameters": {
+										"unique-id": "Bullets.TargetID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Bullets",
+									"sid": 575711688392130,
+									"parameters": {
+										"x": "Enemy.X",
+										"y": "Enemy.Y"
+									}
+								}
+							],
+							"sid": 489253282316288
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullets",
+							"sid": 316385555316991,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 775926177175315,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Bullets",
+									"sid": 708766597846558,
+									"parameters": {
+										"instance-variable": "TargetID",
+										"comparison": 0,
+										"value": "Enemy.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullets",
+									"sid": 416813115136195
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Enemy",
+									"sid": 896482077609786,
+									"parameters": {
+										"instance-variable": "HP",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 812421488381874
+						}
+					]
+				}
+			],
+			"sid": 351355344654621
+		},
+		{
+			"eventType": "script",
+			"script": ""
+		}
+	],
+	"sid": 763059785394663
+}

@@ -1,0 +1,18 @@
+{
+	"name": "globals",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 165274960694562
+				}
+			],
+			"actions": [],
+			"sid": 477690064847999
+		}
+	],
+	"sid": 697745534192989
+}

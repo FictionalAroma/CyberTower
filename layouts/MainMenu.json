@@ -1,0 +1,511 @@
+{
+	"name": "MainMenu",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 361719,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 151,
+						"y": 129,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 394221,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 412,
+						"y": 130,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 937867,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 688,
+						"y": 134,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 583185,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 966,
+						"y": 140,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 295435,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1258,
+						"y": 140,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 652066,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 145,
+						"y": 406,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 180740,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 420,
+						"y": 409,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 587387,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 705,
+						"y": 412,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 438778,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 981,
+						"y": 411,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 491698,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1273,
+						"y": 412,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectPrev",
+					"properties": {
+						"type": "button",
+						"text": "< Prev",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": ""
+					},
+					"uid": 241444,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 63,
+						"y": 314,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "LevelSelectNext",
+					"properties": {
+						"type": "button",
+						"text": "Next >",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": ""
+					},
+					"uid": 477963,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1479,
+						"y": 317,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 895717882433645,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 784661009170359,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1600,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "orthographic",
+	"eventSheet": "MenuSheet"
+}

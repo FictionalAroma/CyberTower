@@ -1,0 +1,156 @@
+{
+	"name": "SplashSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "LoaderLayoutComplete",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 602629294619657
+		},
+		{
+			"eventType": "variable",
+			"name": "ImageLoadingComplete",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 108703166652851
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 887716056342229
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "LoadingText",
+					"sid": 710612446762144,
+					"parameters": {
+						"text": "\"Loading Menu\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 508650138967439,
+					"parameters": {
+						"variable": "ImageLoadingComplete",
+						"value": "false"
+					}
+				},
+				{
+					"id": "load-layout-images",
+					"objectClass": "System",
+					"sid": 473518510691709,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 504312854708208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 529252927876324
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 732841095825441,
+					"parameters": {
+						"variable": "LoaderLayoutComplete",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Level0Text",
+					"sid": 723301691660939,
+					"parameters": {
+						"text": "\"Loader Layout Complete\""
+					}
+				}
+			],
+			"sid": 477226337251909
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-image-loading-complete",
+					"objectClass": "System",
+					"sid": 301890798359368
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 441477049965140,
+					"parameters": {
+						"variable": "ImageLoadingComplete",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 545156430296318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 763311176999503,
+					"parameters": {
+						"variable": "ImageLoadingComplete"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 555499068481101,
+					"parameters": {
+						"variable": "LoaderLayoutComplete"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Level0Text",
+					"sid": 901604951338100,
+					"parameters": {
+						"text": "\"Loading Completed\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 583708190756076,
+					"parameters": {
+						"layout": "MainMenu"
+					}
+				}
+			],
+			"sid": 416656085783762
+		}
+	],
+	"sid": 245726278740783
+}

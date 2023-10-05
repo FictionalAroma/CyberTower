@@ -1,0 +1,89 @@
+{
+	"name": "UIRepo",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "LevelSelectButton",
+					"properties": {
+						"type": "button",
+						"text": "Level 0",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "level-button"
+					},
+					"uid": 918063,
+					"instanceVariables": {
+						"levelToLoad": 0
+					},
+					"behaviors": {
+						"Persist": {
+							"properties": {}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 390,
+						"y": 243,
+						"width": 200,
+						"height": 130,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 795973885408239,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 887824406242796,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 3200,
+	"height": 1440,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": null
+}
