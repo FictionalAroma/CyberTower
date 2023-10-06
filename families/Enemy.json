@@ -38,6 +38,11 @@
 			"behaviorId": "Flash",
 			"name": "Flash",
 			"sid": 274998497409842
+		},
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 647263939303130
 		}
 	],
 	"effectTypes": [],

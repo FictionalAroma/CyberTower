@@ -77,14 +77,6 @@
 						"variable": "LoaderLayoutComplete",
 						"value": "true"
 					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Level0Text",
-					"sid": 723301691660939,
-					"parameters": {
-						"text": "\"Loader Layout Complete\""
-					}
 				}
 			],
 			"sid": 477226337251909
@@ -132,14 +124,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "Level0Text",
-					"sid": 901604951338100,
-					"parameters": {
-						"text": "\"Loading Completed\""
-					}
-				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",

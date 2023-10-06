@@ -1,0 +1,21 @@
+{
+	"name": "PauseMenu",
+	"plugin-id": "NinePatch",
+	"sid": 655683580915156,
+	"isGlobal": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 102,
+		"height": 102,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6308143,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

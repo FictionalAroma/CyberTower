@@ -15,8 +15,30 @@
 		},
 		{
 			"type": "plugin",
+			"id": "EdwardBonnett_VsCodePlugin",
+			"name": "VS Code Plugin",
+			"author": "Edward Bonnett",
+			"bundled": true,
+			"version": "1.0.0.1"
+		},
+		{
+			"type": "plugin",
+			"id": "Internationalization",
+			"name": "Internationalization",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "LocalStorage",
 			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -29,8 +51,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -113,6 +149,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -130,8 +173,9 @@
 	"objectTypes": {
 		"items": [
 			"LocalStorage",
-			"LevelSelectPrev",
-			"LevelSelectNext"
+			"SpriteFont",
+			"VSCodePlugin",
+			"Internationalization"
 		],
 		"subfolders": [
 			{
@@ -160,8 +204,11 @@
 			},
 			{
 				"items": [
-					"Level0Text",
-					"LevelSelectButton"
+					"LevelSelectButton",
+					"TitleText",
+					"LevelSelectNext",
+					"LevelSelectPrev",
+					"TiledBackground"
 				],
 				"subfolders": [],
 				"name": "MenuObjects"
@@ -181,11 +228,30 @@
 				],
 				"subfolders": [],
 				"name": "Level Layout"
+			},
+			{
+				"items": [
+					"pause",
+					"PauseMenu",
+					"GlassPanel",
+					"ResumeButton",
+					"ReturnToMenuButton"
+				],
+				"subfolders": [],
+				"name": "UI"
 			}
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"PauseMenu",
+				"ResumeButton",
+				"ReturnToMenuButton"
+			]
+		}
+	],
 	"families": {
 		"items": [
 			"Enemy",
@@ -277,7 +343,64 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "OpenDyslexic-Regular.woff2",
+					"type": "font/woff2",
+					"sid": 281147439660324,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelbreit.woff2",
+					"type": "font/woff2",
+					"sid": 811074854955341,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelbreitfett.woff2",
+					"type": "font/woff2",
+					"sid": 940343156484625,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelhalbfett.woff2",
+					"type": "font/woff2",
+					"sid": 664124775386551,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelillegible.woff2",
+					"type": "font/woff2",
+					"sid": 560183131950221,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelklein.woff2",
+					"type": "font/woff2",
+					"sid": 196585791834638,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "depixelschmal.woff2",
+					"type": "font/woff2",
+					"sid": 343884638362617,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

@@ -52,6 +52,11 @@
 						},
 						"Flash": {
 							"properties": {}
+						},
+						"Jumpthru": {
+							"properties": {
+								"enabled": true
+							}
 						}
 					},
 					"world": {
@@ -97,6 +102,12 @@
 								"use-collision-cells": true,
 								"enabled": true
 							}
+						},
+						"NoSave": {
+							"properties": {}
+						},
+						"DestroyOutsideLayout": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -141,6 +152,12 @@
 								"step": false,
 								"enabled": true
 							}
+						},
+						"NoSave": {
+							"properties": {}
+						},
+						"DestroyOutsideLayout": {
+							"properties": {}
 						}
 					},
 					"world": {
@@ -186,6 +203,12 @@
 								"use-collision-cells": true,
 								"enabled": true
 							}
+						},
+						"NoSave": {
+							"properties": {}
+						},
+						"DestroyOutsideLayout": {
+							"properties": {}
 						}
 					},
 					"world": {

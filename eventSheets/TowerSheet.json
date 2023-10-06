@@ -2,6 +2,75 @@
 	"name": "TowerSheet",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 275448593444688
+		},
+		{
+			"eventType": "variable",
+			"name": "CurrentGameSpeed",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 921147858588330
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LevelSetup",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 520222120403281
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SetupPauseMenu",
+							"sid": 464656301188584
+						},
+						{
+							"callFunction": "Unpause",
+							"sid": 567889416708216
+						}
+					],
+					"sid": 934934550178570
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 942332774805346
+						}
+					],
+					"actions": [
+						{
+							"id": "unload-unused-images",
+							"objectClass": "System",
+							"sid": 465524388859436
+						}
+					],
+					"sid": 792399600845047
+				}
+			],
+			"sid": 971158629999309
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Enemy Set",
@@ -395,6 +464,271 @@
 		{
 			"eventType": "script",
 			"script": ""
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "SetupPauseMenu",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 981853429082560,
+							"parameters": {
+								"object-to-create": "PauseMenu",
+								"layer": "0",
+								"x": "LayoutWidth/2",
+								"y": "LayoutHeight/2",
+								"create-hierarchy": true,
+								"template-name": "\"PauseMenu\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ResumeButton",
+							"sid": 430578601693304,
+							"parameters": {
+								"x": "PauseMenu.X",
+								"y": " (PauseMenu.Y - PauseMenu.Height/2) + ResumeButton.Height/2 + 32"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ReturnToMenuButton",
+							"sid": 376687384094797,
+							"parameters": {
+								"x": "ResumeButton.X",
+								"y": "ResumeButton.Y + ReturnToMenuButton.Height + 32"
+							}
+						}
+					],
+					"sid": 808119538609057
+				},
+				{
+					"functionName": "Pause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 618755494393881,
+							"parameters": {
+								"variable": "Paused",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 445095886876707,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"callFunction": "TogglePauseMenu",
+							"sid": 573712583853576
+						}
+					],
+					"sid": 362612465853394
+				},
+				{
+					"functionName": "Unpause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 117428365995672,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 185199381612480,
+							"parameters": {
+								"time-scale": "CurrentGameSpeed"
+							}
+						},
+						{
+							"callFunction": "TogglePauseMenu",
+							"sid": 237178429305428
+						}
+					],
+					"sid": 793009195955171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 692353115692405,
+							"parameters": {
+								"object": "pause"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 576354753878266,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 992622390610125,
+									"parameters": {
+										"variable": "Paused"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Unpause",
+									"sid": 463176119437442
+								}
+							],
+							"sid": 908597627972246
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 803309672781256
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Pause",
+									"sid": 721406793176523
+								}
+							],
+							"sid": 493629504399870
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 506222168415334,
+							"parameters": {
+								"object": "ResumeButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Unpause",
+							"sid": 965758918655164
+						}
+					],
+					"sid": 768964315120046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 430494340881938,
+							"parameters": {
+								"object": "ReturnToMenuButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Unpause",
+							"sid": 302065328793995
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 472460725831467,
+							"parameters": {
+								"layout": "MainMenu"
+							}
+						}
+					],
+					"sid": 507712684134202
+				},
+				{
+					"functionName": "TogglePauseMenu",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "PauseMenu",
+							"sid": 551101638802161,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ResumeButton",
+							"sid": 614733984466492,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ReturnToMenuButton",
+							"sid": 724538816237765,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						}
+					],
+					"sid": 407650492536102
+				}
+			],
+			"sid": 231294521430971
 		}
 	],
 	"sid": 763059785394663

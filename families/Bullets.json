@@ -16,6 +16,16 @@
 			"behaviorId": "Bullet",
 			"name": "Bullet",
 			"sid": 565546063616534
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 357668668139878
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 565035532610034
 		}
 	],
 	"effectTypes": [],

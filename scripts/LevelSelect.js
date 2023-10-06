@@ -12,15 +12,25 @@ export class LevelSelect
 		
 		
 		layout.addEventListener("beforelayoutstart", () => this.loadMenu());
+		layout.addEventListener("afterlayoutstart", () => this.setPage(0));
+
+		layout.addEventListener("afterlayoutend", () => this.testfunction());
 		
 		this.currentPage = 0;
-
+		this.buttonArray = [];
 		
+	}
+
+	testfunction()
+	{
+		const size = this.buttonArray.length;
+		const sanity = this.buttonArray.some(b=> b==null);
+		this.buttonArray.splice(0, this.buttonArray.length);
 	}
 	
 	loadMenu()
 	{
-		if(this.buttonArray == null)
+		if(this.buttonArray.length == 0)
 		{
 			this.buttonArray = this.runtime.objects.LevelSelectButton.getAllInstances();
 			this.buttonArray.forEach(button => 
@@ -51,8 +61,6 @@ export class LevelSelect
 				});
 			}
 		}
-		
-		this.setPage(0);
 	}
 	
 	

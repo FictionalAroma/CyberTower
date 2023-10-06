@@ -8,6 +8,16 @@
 			"behaviorId": "Turret",
 			"name": "TowerTurret",
 			"sid": 856497193541988
+		},
+		{
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 547957604190093
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 715525511173675
 		}
 	],
 	"effectTypes": [],

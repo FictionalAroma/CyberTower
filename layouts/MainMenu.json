@@ -2,7 +2,158 @@
 	"name": "MainMenu",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "Background",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TiledBackground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 653823,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1600,
+						"height": 720,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 895717882433645,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Visual",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TitleText",
+					"properties": {
+						"text": "Cyberspace Tower Defense",
+						"enable-bbcode": true,
+						"font": "depixelhalbfett",
+						"size": 48,
+						"line-height": 18,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.19607843137254902,
+							0.6039215686274509,
+							0.24313725490196078,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 673594,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 827,
+						"y": 141,
+						"width": 766,
+						"height": 227,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 760956576032456,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Buttons",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -32,8 +183,8 @@
 						}
 					},
 					"world": {
-						"x": 151,
-						"y": 129,
+						"x": 140,
+						"y": 263,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -72,8 +223,8 @@
 						}
 					},
 					"world": {
-						"x": 412,
-						"y": 130,
+						"x": 401,
+						"y": 264,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -112,8 +263,8 @@
 						}
 					},
 					"world": {
-						"x": 688,
-						"y": 134,
+						"x": 677,
+						"y": 268,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -152,8 +303,8 @@
 						}
 					},
 					"world": {
-						"x": 966,
-						"y": 140,
+						"x": 955,
+						"y": 274,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -192,8 +343,8 @@
 						}
 					},
 					"world": {
-						"x": 1258,
-						"y": 140,
+						"x": 1247,
+						"y": 274,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -232,8 +383,8 @@
 						}
 					},
 					"world": {
-						"x": 145,
-						"y": 406,
+						"x": 134,
+						"y": 540,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -272,8 +423,8 @@
 						}
 					},
 					"world": {
-						"x": 420,
-						"y": 409,
+						"x": 409,
+						"y": 543,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -312,8 +463,8 @@
 						}
 					},
 					"world": {
-						"x": 705,
-						"y": 412,
+						"x": 694,
+						"y": 546,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -352,8 +503,8 @@
 						}
 					},
 					"world": {
-						"x": 981,
-						"y": 411,
+						"x": 970,
+						"y": 545,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -392,8 +543,8 @@
 						}
 					},
 					"world": {
-						"x": 1273,
-						"y": 412,
+						"x": 1262,
+						"y": 546,
 						"width": 200,
 						"height": 130,
 						"originX": 0,
@@ -423,8 +574,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 63,
-						"y": 314,
+						"x": 52,
+						"y": 448,
 						"width": 72,
 						"height": 24,
 						"originX": 0,
@@ -454,8 +605,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1479,
-						"y": 317,
+						"x": 1468,
+						"y": 451,
 						"width": 72,
 						"height": 24,
 						"originX": 0,
@@ -469,7 +620,7 @@
 					}
 				}
 			],
-			"sid": 895717882433645,
+			"sid": 225188999946118,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -485,7 +636,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
