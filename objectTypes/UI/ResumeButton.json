@@ -2,7 +2,7 @@
 	"name": "ResumeButton",
 	"plugin-id": "Text",
 	"sid": 233739254539639,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": []

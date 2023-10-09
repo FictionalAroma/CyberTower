@@ -2,7 +2,7 @@
 	"name": "BasicEnemy",
 	"plugin-id": "Sprite",
 	"sid": 641307884798151,
-	"isGlobal": true,
+	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],

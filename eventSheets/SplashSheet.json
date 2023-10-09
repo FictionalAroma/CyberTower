@@ -55,6 +55,27 @@
 					"parameters": {
 						"layout": "MainMenu"
 					}
+				},
+				{
+					"id": "load-layout-images",
+					"objectClass": "System",
+					"sid": 700322172808981,
+					"parameters": {
+						"layout": "UIRepo"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 374051159589156,
+					"parameters": {
+						"object-to-create": "PauseMenu",
+						"layer": "0",
+						"x": "0",
+						"y": "0",
+						"create-hierarchy": true,
+						"template-name": "\"PauseMenu\""
+					}
 				}
 			],
 			"sid": 504312854708208

@@ -220,8 +220,8 @@
 						"replicasUIDs": null
 					},
 					"world": {
-						"x": 805,
-						"y": 610,
+						"x": 648,
+						"y": 739,
 						"width": 778,
 						"height": 504,
 						"originX": 0.5,
@@ -264,8 +264,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 801,
-						"y": 503,
+						"x": 644,
+						"y": 632,
 						"width": 310,
 						"height": 122,
 						"originX": 0.5,
@@ -341,8 +341,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 793,
-						"y": 737,
+						"x": 636,
+						"y": 866,
 						"width": 310,
 						"height": 122,
 						"originX": 0.5,

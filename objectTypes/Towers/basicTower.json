@@ -2,7 +2,7 @@
 	"name": "basicTower",
 	"plugin-id": "Sprite",
 	"sid": 982214902909017,
-	"isGlobal": true,
+	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "BulletDamage",

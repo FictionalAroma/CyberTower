@@ -40,9 +40,9 @@
 			"sid": 274998497409842
 		},
 		{
-			"behaviorId": "jumpthru",
-			"name": "Jumpthru",
-			"sid": 647263939303130
+			"behaviorId": "NoSave",
+			"name": "NoSave",
+			"sid": 421721639763494
 		}
 	],
 	"effectTypes": [],

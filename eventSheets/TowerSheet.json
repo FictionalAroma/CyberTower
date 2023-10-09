@@ -45,6 +45,14 @@
 						{
 							"callFunction": "Unpause",
 							"sid": 567889416708216
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 296792176738110,
+							"parameters": {
+								"time-scale": "CurrentGameSpeed"
+							}
 						}
 					],
 					"sid": 934934550178570
@@ -63,6 +71,14 @@
 							"id": "unload-unused-images",
 							"objectClass": "System",
 							"sid": 465524388859436
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 477332887066550,
+							"parameters": {
+								"time-scale": "1.0"
+							}
 						}
 					],
 					"sid": 792399600845047
@@ -484,16 +500,12 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 981853429082560,
+							"id": "set-position",
+							"objectClass": "PauseMenu",
+							"sid": 135037576486574,
 							"parameters": {
-								"object-to-create": "PauseMenu",
-								"layer": "0",
 								"x": "LayoutWidth/2",
-								"y": "LayoutHeight/2",
-								"create-hierarchy": true,
-								"template-name": "\"PauseMenu\""
+								"y": "LayoutHeight/2"
 							}
 						},
 						{
@@ -546,8 +558,28 @@
 							}
 						},
 						{
-							"callFunction": "TogglePauseMenu",
-							"sid": 573712583853576
+							"id": "set-visible",
+							"objectClass": "PauseMenu",
+							"sid": 687579157554164,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ResumeButton",
+							"sid": 149743772493269,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ReturnToMenuButton",
+							"sid": 340347262153443,
+							"parameters": {
+								"visibility": "visible"
+							}
 						}
 					],
 					"sid": 362612465853394
@@ -581,8 +613,28 @@
 							}
 						},
 						{
-							"callFunction": "TogglePauseMenu",
-							"sid": 237178429305428
+							"id": "set-visible",
+							"objectClass": "PauseMenu",
+							"sid": 734982158781878,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ResumeButton",
+							"sid": 670897792376971,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ReturnToMenuButton",
+							"sid": 425502938101797,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
 					],
 					"sid": 793009195955171
@@ -688,44 +740,6 @@
 						}
 					],
 					"sid": 507712684134202
-				},
-				{
-					"functionName": "TogglePauseMenu",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "PauseMenu",
-							"sid": 551101638802161,
-							"parameters": {
-								"visibility": "toggle"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ResumeButton",
-							"sid": 614733984466492,
-							"parameters": {
-								"visibility": "toggle"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ReturnToMenuButton",
-							"sid": 724538816237765,
-							"parameters": {
-								"visibility": "toggle"
-							}
-						}
-					],
-					"sid": 407650492536102
 				}
 			],
 			"sid": 231294521430971

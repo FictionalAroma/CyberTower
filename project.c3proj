@@ -149,13 +149,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "jumpthru",
-			"name": "Jump-thru",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "scrollto",
 			"name": "Scroll To",
 			"author": "Scirra",
@@ -302,6 +295,14 @@
 					"sid": 365320945164047,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "towerLevelControl.js",
+					"type": "application/javascript",
+					"sid": 100698016405386,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],

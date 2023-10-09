@@ -2,7 +2,7 @@
 	"name": "Bullet",
 	"plugin-id": "Sprite",
 	"sid": 956582201309929,
-	"isGlobal": true,
+	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "Target",
