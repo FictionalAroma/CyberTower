@@ -302,17 +302,6 @@
 								"image-point": "0",
 								"create-hierarchy": false
 							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "SpawnPoint",
-							"sid": 303648014250414,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "0.2"
-							}
 						}
 					],
 					"sid": 488307221108783

@@ -24,9 +24,9 @@
 			"sid": 645378529528421
 		},
 		{
-			"behaviorId": "Flash",
-			"name": "Flash",
-			"sid": 303272052218238
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 223544324950074
 		}
 	],
 	"effectTypes": [],
