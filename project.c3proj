@@ -23,6 +23,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "HTMLElement",
+			"name": "HTML Element",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Internationalization",
 			"name": "Internationalization",
 			"author": "Scirra",
@@ -81,6 +88,13 @@
 			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -168,7 +182,8 @@
 			"LocalStorage",
 			"SpriteFont",
 			"VSCodePlugin",
-			"Internationalization"
+			"Internationalization",
+			"HTMLElement"
 		],
 		"subfolders": [
 			{
@@ -225,12 +240,23 @@
 			{
 				"items": [
 					"pause",
-					"PauseMenu",
 					"GlassPanel",
-					"ResumeButton",
-					"ReturnToMenuButton"
+					"MoneyLabel",
+					"MoneyValue",
+					"LivesValue",
+					"LivesLabel"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"PauseMenu",
+							"ResumeButton",
+							"ReturnToMenuButton"
+						],
+						"subfolders": [],
+						"name": "Menus"
+					}
+				],
 				"name": "UI"
 			}
 		]
@@ -328,6 +354,20 @@
 					],
 					"subfolders": [],
 					"name": "Data"
+				},
+				{
+					"items": [
+						{
+							"name": "EnemyBehavior.js",
+							"type": "text/javascript",
+							"sid": 937713511434252,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "objectTypes"
 				}
 			]
 		},

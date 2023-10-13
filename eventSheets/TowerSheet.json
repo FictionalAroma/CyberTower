@@ -2,6 +2,10 @@
 	"name": "TowerSheet",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "globals"
+		},
+		{
 			"eventType": "variable",
 			"name": "Paused",
 			"type": "boolean",
@@ -38,10 +42,6 @@
 						}
 					],
 					"actions": [
-						{
-							"callFunction": "SetupPauseMenu",
-							"sid": 464656301188584
-						},
 						{
 							"callFunction": "Unpause",
 							"sid": 567889416708216
@@ -152,54 +152,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-arrived",
-							"objectClass": "Enemy",
-							"sid": 978208548535095,
-							"behaviorType": "MoveTo"
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Enemy",
-							"sid": 549101044747913,
-							"parameters": {
-								"instance-variable": "NodesToMove",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 804401581086868,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 168509993121653,
-									"parameters": {
-										"instance-variable": "NodesToMove",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Enemy",
-									"sid": 538643073873844
-								}
-							],
-							"sid": 775298455717217
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-failed-to-find-path",
 							"objectClass": "Enemy",
 							"sid": 688041335775247,
@@ -220,29 +172,6 @@
 						}
 					],
 					"sid": 802183906193617
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 790874425092357,
-							"parameters": {
-								"instance-variable": "HP",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Enemy",
-							"sid": 657883008158117
-						}
-					],
-					"sid": 895570125699934
 				}
 			],
 			"sid": 532762927065989
@@ -267,7 +196,7 @@
 						{
 							"id": "start-timer",
 							"objectClass": "SpawnPoint",
-							"sid": 320382270494864,
+							"sid": 595971931913096,
 							"behaviorType": "Timer",
 							"parameters": {
 								"duration": "SpawnPoint.SpawnDelay",
@@ -302,20 +231,36 @@
 								"image-point": "0",
 								"create-hierarchy": false
 							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "SpawnPoint",
-							"sid": 303648014250414,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "0.2"
-							}
 						}
 					],
 					"sid": 488307221108783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 562376375431235,
+							"parameters": {
+								"object": "SpawnPoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "SpawnPoint",
+							"sid": 670049153996384,
+							"parameters": {
+								"object": "BasicEnemy",
+								"layer": "\"Enemies\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 292511916049978
 				}
 			],
 			"sid": 562396490778459
@@ -478,8 +423,58 @@
 			"sid": 351355344654621
 		},
 		{
-			"eventType": "script",
-			"script": ""
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 692353115692405,
+					"parameters": {
+						"object": "pause"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 576354753878266,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 992622390610125,
+							"parameters": {
+								"variable": "Paused"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Unpause",
+							"sid": 463176119437442
+						}
+					],
+					"sid": 908597627972246
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 803309672781256
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Pause",
+							"sid": 721406793176523
+						}
+					],
+					"sid": 493629504399870
+				}
+			]
 		},
 		{
 			"eventType": "group",
@@ -558,27 +553,21 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "PauseMenu",
-							"sid": 687579157554164,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 371060941215711,
 							"parameters": {
+								"layer": "\"UIOverlay\"",
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "ResumeButton",
-							"sid": 149743772493269,
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 228196606708740,
 							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ReturnToMenuButton",
-							"sid": 340347262153443,
-							"parameters": {
-								"visibility": "visible"
+								"layer": "\"UIOverlay\"",
+								"interactive": true
 							}
 						}
 					],
@@ -613,85 +602,25 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "PauseMenu",
-							"sid": 734982158781878,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 136423408629352,
 							"parameters": {
+								"layer": "\"UIOverlay\"",
 								"visibility": "invisible"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "ResumeButton",
-							"sid": 670897792376971,
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 359425565416768,
 							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "ReturnToMenuButton",
-							"sid": 425502938101797,
-							"parameters": {
-								"visibility": "invisible"
+								"layer": "\"UIOverlay\"",
+								"interactive": false
 							}
 						}
 					],
 					"sid": 793009195955171
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 692353115692405,
-							"parameters": {
-								"object": "pause"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 576354753878266,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 992622390610125,
-									"parameters": {
-										"variable": "Paused"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Unpause",
-									"sid": 463176119437442
-								}
-							],
-							"sid": 908597627972246
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 803309672781256
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Pause",
-									"sid": 721406793176523
-								}
-							],
-							"sid": 493629504399870
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -743,6 +672,23 @@
 				}
 			],
 			"sid": 231294521430971
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 699568904306502
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SetupPauseMenu",
+					"sid": 464656301188584
+				}
+			],
+			"sid": 214958061539171
 		}
 	],
 	"sid": 763059785394663

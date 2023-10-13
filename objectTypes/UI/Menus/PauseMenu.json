@@ -2,7 +2,7 @@
 	"name": "PauseMenu",
 	"plugin-id": "NinePatch",
 	"sid": 655683580915156,
-	"isGlobal": true,
+	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],

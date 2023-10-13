@@ -1,8 +1,8 @@
 {
-	"name": "ReturnToMenuButton",
+	"name": "ResumeButton",
 	"plugin-id": "Text",
-	"sid": 867063927166700,
-	"isGlobal": true,
+	"sid": 233739254539639,
+	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": []

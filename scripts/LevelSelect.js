@@ -1,30 +1,29 @@
-import {LoadLevelData} from "./Data/levelData.js"
 
-const levelPageSize = 10;
+
 
 export class LevelSelect
 {
 	//loadedData = new LevelData();
-	constructor(runtime, layout)
+	constructor(runtime, layout, loadLevelCallback)
 	{
 		this.runtime = runtime;
 		this.layout = layout;
-		
+		this.loadLevelCallback = loadLevelCallback;
 		
 		layout.addEventListener("beforelayoutstart", () => this.loadMenu());
 		layout.addEventListener("afterlayoutstart", () => this.setPage(0));
 
-		layout.addEventListener("afterlayoutend", () => this.testfunction());
+		layout.addEventListener("afterlayoutend", () => this.cleanup());
 		
 		this.currentPage = 0;
 		this.buttonArray = [];
+		this.levelPageSize = 10;
+
 		
 	}
 
-	testfunction()
+	cleanup()
 	{
-		const size = this.buttonArray.length;
-		const sanity = this.buttonArray.some(b=> b==null);
 		this.buttonArray.splice(0, this.buttonArray.length);
 	}
 	
@@ -64,25 +63,25 @@ export class LevelSelect
 	}
 	
 	
-	async LoadLevelData(runtime)
+	async SetLevelData(dataset)
 	{
-		 this.loadedData = await LoadLevelData(runtime);
+		 this.loadedData = dataset;
 		
-		this.maxPages = Math.floor(this.loadedData.levels.length / levelPageSize);
+		this.maxPages = Math.floor(this.loadedData.levels.length / this.levelPageSize);
 	}
 	
 	setPage(pageIndex)
 	{
 		this.currentPage = pageIndex;
-		const minIndex = pageIndex * levelPageSize;
-		const maxIndex = minIndex + levelPageSize;
+		const minIndex = pageIndex * this.levelPageSize;
+		const maxIndex = minIndex + this.levelPageSize;
 		
 		this.prevButton.isEnabled = (pageIndex > 0);
 		this.nextButton.isEnabled = (pageIndex < this.maxPages);
 		
 		const toShow = this.loadedData.levels.slice(minIndex, maxIndex);
 
-		for(let index = 0; index < levelPageSize; index++)
+		for(let index = 0; index < this.levelPageSize; index++)
 		{
 			const button = this.buttonArray[index];
 			if(index < toShow.length)
@@ -102,8 +101,8 @@ export class LevelSelect
 
 	}
 	
-	loadLevel(runtime, levelNumber)
+	loadLevel(levelNumber)
 	{
-		runtime.goToLayout("Level0");
+		this.loadLevelCallback(0);
 	}
 }
