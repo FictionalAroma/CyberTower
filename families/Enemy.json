@@ -16,6 +16,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 471610046756196
+		},
+		{
+			"name": "RewardValue",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 877228017020502
+		},
+		{
+			"name": "DamageAmount",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 983172105604826
 		}
 	],
 	"behaviorTypes": [

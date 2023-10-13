@@ -10,9 +10,12 @@ export default class TowerLevelControl
         this.gridLayer = layout.getLayer(0);
         layout.addEventListener("beforelayoutstart", () => this.SetupLevel());
 
+        this.currentMoney = level.StartMoney;
+        this.currentLives = level.StartLives;
+
     }
 
-    SetupLevel()
+    async SetupLevel()
     {
         this.tilemap = this.runtime.objects.Tilemap.getFirstInstance();
         this.spawnPoint = this.runtime.objects.SpawnPoint.getFirstInstance();
@@ -20,6 +23,12 @@ export default class TowerLevelControl
 
         this.runtime.addEventListener("pointerdown", (pointerEvent) => this.OnPointerDown(pointerEvent));
         this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
+
+        this.livesDisplay = this.runtime.objects.LivesValue.getFirstInstance();
+        this.MoneyValue = this.runtime.objects.MoneyValue.getFirstInstance();
+
+
+        this.runtime.objects.Enemy.addEventListener("instancecreate", (e) => e.instance.setup(this))
     }
 
     OnPointerDown(pointerEvent)
@@ -60,11 +69,14 @@ export default class TowerLevelControl
                 }
             }
         }
-        
     }
 
     OnTick(runtime) {
         this.currentTapDelay -= runtime.dt;
+
+        runtime.objects.Enemy.getAllInstances().forEach(en=> {
+            en.onTick();
+        });
     }
 
     Teardown()
@@ -72,6 +84,22 @@ export default class TowerLevelControl
         layout.removeEventListener("beforelayoutstart", () => this.SetupLevel());
         this.runtime.removeEventListener("pointerdown", (pointerEvent) => this.OnPointerDown(pointerEvent));
         this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
+    }
+
+    EnemyKilled(en)
+    {
+        this.UpdateMoney(en.GetRewardValue());
+    }
+
+    UpdateMoney(amountToAdd)
+    {
+        this.currentMoney += amountToAdd;
+        this.UpdateInfoDisplay();
+    }
+
+    UpdateInfoDisplay()
+    {
+
     }
 
 }

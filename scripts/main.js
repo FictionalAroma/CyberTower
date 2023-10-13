@@ -1,17 +1,19 @@
-
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 import {LevelSelect} from "./LevelSelect.js";
 import TowerLevelControl from "./towerLevelControl.js";
 import {LoadLevelData} from "./Data/levelData.js"
+import EnemyBehaviour from "./objectTypes/EnemyBehavior.js";
 
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
-	
+	await ConfigureCustomTypes(runtime);
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+
 });
+
 
 async function OnBeforeProjectStart(runtime)
 {
@@ -30,6 +32,20 @@ async function OnBeforeProjectStart(runtime)
 
 }
 
+async function ConfigureCustomTypes(runtime)
+{
+
+	const customTypeMapping = [{
+		ObjectType: EnemyBehaviour,
+		ConstructObjectNames: ["BasicEnemy"] 
+	}]
+	customTypeMapping.forEach(tm => {
+		const type = tm.ObjectType;
+		tm.ConstructObjectNames.forEach(n => runtime.objects[n].setInstanceClass(type))
+	})
+	
+}
+
 function Tick(runtime)
 {
 	if(runtime.towerLevelControl !=null)
@@ -40,7 +56,7 @@ function Tick(runtime)
 
 function LoadLevel(runtime, levelIndex)
 {
-	const levelToLoad = runtime.getLayout("Level0");
+	const levelToLoad = runtime.getLayout(`Level${levelIndex}`);
 	const levelData = runtime.dataset.levels[levelIndex]
 	if(levelToLoad != null)
 	{

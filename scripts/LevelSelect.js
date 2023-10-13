@@ -103,6 +103,6 @@ export class LevelSelect
 	
 	loadLevel(levelNumber)
 	{
-		this.loadLevelCallback("Level0");
+		this.loadLevelCallback(0);
 	}
 }

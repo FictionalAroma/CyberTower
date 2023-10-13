@@ -18,7 +18,9 @@
 					"uid": 116246,
 					"instanceVariables": {
 						"NodesToMove": 99,
-						"HP": 10
+						"HP": 10,
+						"RewardValue": 2,
+						"DamageAmount": 1
 					},
 					"behaviors": {
 						"Pathfinding": {
