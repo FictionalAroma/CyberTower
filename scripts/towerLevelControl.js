@@ -8,10 +8,9 @@ export default class TowerLevelControl
         this.level = level;
         this.towerLayer = layout.getLayer(2);
         this.gridLayer = layout.getLayer(0);
-        layout.addEventListener("beforelayoutstart", () => this.SetupLevel());
 
-        this.currentMoney = level.StartMoney;
-        this.currentLives = level.StartLives;
+        layout.addEventListener("beforelayoutstart", () => this.SetupLevel());
+        layout.addEventListener("afterlayoutend", () => this.Teardown());
 
     }
 
@@ -25,20 +24,29 @@ export default class TowerLevelControl
         this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
 
         this.livesDisplay = this.runtime.objects.LivesValue.getFirstInstance();
-        this.MoneyValue = this.runtime.objects.MoneyValue.getFirstInstance();
+        this.moneyDisplay = this.runtime.objects.MoneyValue.getFirstInstance();
 
 
         this.runtime.objects.Enemy.addEventListener("instancecreate", (e) => e.instance.setup(this))
+        
+        this.currentMoney = this.level.startMoney;
+        this.currentLives = this.level.startLives;
+        this.gameOverHit = false;
+
+        this.UpdateInfoDisplay();
+
+
     }
 
     OnPointerDown(pointerEvent)
     {
+        if(this.gameOverHit) return;
         this.currentTapDelay = this.tapDelay;
     }
 
     OnPointerUp(pointerEvent)
     {
-        
+        if(this.gameOverHit) return;
         if(this.currentTapDelay > 0) 
         {
             this.OnTap(pointerEvent);
@@ -47,8 +55,7 @@ export default class TowerLevelControl
     }
 
     OnTap(pointerEvent)
-    {
-
+    {       
         let mouseXYAr = this.towerLayer.cssPxToLayer(pointerEvent.clientX, pointerEvent.clientY);
         const towers = this.runtime.objects.Towers.getAllInstances();
         const foundTower = towers.find(s => s.containsPoint(mouseXYAr[0], mouseXYAr[1]));
@@ -64,8 +71,12 @@ export default class TowerLevelControl
                 const towerMapResult = this.TowerMap[cellCoords[0]][cellCoords[1]];
                 if(towerMapResult != true)
                 {
-                    this.runtime.objects.basicTower.createInstance(2, cellCoords[0]*tileSizeX + tileSizeX/2, cellCoords[1]*tileSizeY + tileSizeY/2, true, "");
-                    this.TowerMap[cellCoords[0]][cellCoords[1]] = true;
+                    if(this.currentMoney >= 10)
+                    {
+                        this.UpdateMoney(-10);
+                        this.runtime.objects.basicTower.createInstance(2, cellCoords[0]*tileSizeX + tileSizeX/2, cellCoords[1]*tileSizeY + tileSizeY/2, true, "");
+                        this.TowerMap[cellCoords[0]][cellCoords[1]] = true;
+                    }
                 }
             }
         }
@@ -81,14 +92,25 @@ export default class TowerLevelControl
 
     Teardown()
     {
-        layout.removeEventListener("beforelayoutstart", () => this.SetupLevel());
+        this.layout.removeEventListener("beforelayoutstart", () => this.SetupLevel());
         this.runtime.removeEventListener("pointerdown", (pointerEvent) => this.OnPointerDown(pointerEvent));
         this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
     }
 
-    EnemyKilled(en)
+    OnEnemyKilled(en)
     {
-        this.UpdateMoney(en.GetRewardValue());
+        this.UpdateMoney(en.getRewardValue());
+    }
+
+    OnEnemyArrive(en)
+    {
+        this.currentLives = Math.max(this.currentLives - en.getDamageAmount(),0);
+        this.UpdateInfoDisplay();
+        if(!this.gameOverHit && this.currentLives <= 0)
+        {
+            this.gameOverHit = true;
+            this.runtime.callFunction("Gameover");
+        }
     }
 
     UpdateMoney(amountToAdd)
@@ -99,16 +121,17 @@ export default class TowerLevelControl
 
     UpdateInfoDisplay()
     {
-
+        this.livesDisplay.text = this.currentLives.toString();
+        this.moneyDisplay.text = this.currentMoney.toString();
     }
 
 }
 
 function makeArray(w, h, val) {
     var arr = [];
-    for(let i = 0; i < h; i++) {
+    for(let i = 0; i < w; i++) {
         arr[i] = [];
-        for(let j = 0; j < w; j++) {
+        for(let j = 0; j < h; j++) {
             arr[i][j] = val;
         }
     }

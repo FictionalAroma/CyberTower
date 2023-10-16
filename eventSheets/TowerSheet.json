@@ -555,18 +555,18 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 371060941215711,
+							"sid": 693483748742658,
 							"parameters": {
-								"layer": "\"UIOverlay\"",
+								"layer": "\"MenuLayer\"",
 								"visibility": "visible"
 							}
 						},
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 228196606708740,
+							"sid": 524641406617225,
 							"parameters": {
-								"layer": "\"UIOverlay\"",
+								"layer": "\"MenuLayer\"",
 								"interactive": true
 							}
 						}
@@ -604,18 +604,18 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 136423408629352,
+							"sid": 619024129875776,
 							"parameters": {
-								"layer": "\"UIOverlay\"",
+								"layer": "\"MenuLayer\"",
 								"visibility": "invisible"
 							}
 						},
 						{
 							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 359425565416768,
+							"sid": 505982929919347,
 							"parameters": {
-								"layer": "\"UIOverlay\"",
+								"layer": "\"MenuLayer\"",
 								"interactive": false
 							}
 						}
@@ -689,6 +689,43 @@
 				}
 			],
 			"sid": 214958061539171
+		},
+		{
+			"functionName": "Gameover",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "GameOverText",
+					"sid": 826627015205470,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "stop-all-timers",
+					"objectClass": "SpawnPoint",
+					"sid": 960700887265974,
+					"behaviorType": "Timer"
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Towers",
+					"sid": 134709053248968,
+					"behaviorType": "TowerTurret",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 762124557187290
 		}
 	],
 	"sid": 763059785394663

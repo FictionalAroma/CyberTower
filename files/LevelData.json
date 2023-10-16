@@ -3,82 +3,114 @@
 		{
 			"index" : 1,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 10,
+			"startLives": 10
 		},		
 		{
 			"index" : 2,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 12,
+			"startLives": 10
 		},		
 		{
 			"index" : 3,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 63,
+			"startLives": 10
 		},
 		{
 			"index" : 4,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 44,
+			"startLives": 10
 		},
 		{
 			"index" : 5,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 55,
+			"startLives": 10
 		},		
 		{
 			"index" : 6,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 66,
+			"startLives": 10
 		},		
 		{
 			"index" : 7,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 8,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 9,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 10,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 11,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 12,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 13,
 			"score" : 0,
-			"unlocked" : true
+			"unlocked" : true,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 14,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 15,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		},		
 		{
 			"index" : 16,
 			"score" : 0,
-			"unlocked" : false
+			"unlocked" : false,
+			"startMoney": 50,
+			"startLives": 10
 		}
 	]
 }
