@@ -1,0 +1,11 @@
+{
+	"name": "UIButtons",
+	"plugin-id": "Sprite",
+	"sid": 742612182126988,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"pause"
+	]
+}

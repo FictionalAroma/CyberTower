@@ -247,7 +247,7 @@
 			"global": false
 		},
 		{
-			"name": "UI",
+			"name": "GameOverlay",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
@@ -257,7 +257,7 @@
 						"initially-visible": true,
 						"initial-animation": "Default",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 318770,
@@ -268,7 +268,7 @@
 						},
 						"Anchor": {
 							"properties": {
-								"left-edge": "window-left",
+								"left-edge": "window-right",
 								"top-edge": "window-top",
 								"right-edge": "none",
 								"bottom-edge": "none",
@@ -520,12 +520,64 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "GameOverText",
+					"properties": {
+						"text": "GAME OVER",
+						"enable-bbcode": true,
+						"font": "depixelhalbfett",
+						"size": 92,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 296864,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
+					"world": {
+						"x": 838,
+						"y": 358,
+						"width": 1030,
+						"height": 414,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 200564551725230,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
-			"isInitiallyInteractive": false,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
@@ -551,9 +603,76 @@
 			"global": false
 		},
 		{
-			"name": "UIOverlay",
+			"name": "MenuLayer",
 			"overriden": 0,
-			"subLayers": [],
+			"subLayers": [
+				{
+					"name": "UIBackground",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [],
+					"sid": 712965221883064,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": false,
+					"color": [
+						1,
+						1,
+						1,
+						0.4
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": false,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "PauseMenu",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [],
+					"sid": 730434063160450,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				}
+			],
 			"instances": [
 				{
 					"type": "PauseMenu",
@@ -746,15 +865,15 @@
 					}
 				}
 			],
-			"sid": 712965221883064,
+			"sid": 534750429881986,
 			"effectTypes": [],
 			"isInitiallyVisible": false,
-			"isInitiallyInteractive": false,
+			"isInitiallyInteractive": true,
 			"color": [
 				1,
 				1,
 				1,
-				0.4
+				1
 			],
 			"backgroundColor": [
 				0.3686274509803922,
@@ -762,7 +881,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

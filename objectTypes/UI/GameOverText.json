@@ -1,0 +1,14 @@
+{
+	"name": "GameOverText",
+	"plugin-id": "Text",
+	"sid": 625523199967594,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		}
+	]
+}

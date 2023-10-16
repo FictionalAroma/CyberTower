@@ -7,10 +7,7 @@ export default class EnemyBehaviour extends ISpriteInstance
         this.behaviors.MoveTo.addEventListener("arrived", e =>{
             if(this.behaviors.MoveTo.getWaypointCount() <= 0)
             {
-                if(this.OnArrive != null)
-                {
-                    this.OnArrive(e);
-                }
+                this.OnArrive();
                 this.destroy();
             }
         });
@@ -18,16 +15,16 @@ export default class EnemyBehaviour extends ISpriteInstance
 
     setup(levelControl)
     {
-        this.OnArrive = levelControl.OnEnemyArrive;
-        this.OnKilled = levelControl.OnEnemyKilled;
+        this.OnArrive = () => levelControl.OnEnemyArrive(this);
+        this.OnKilled = () => levelControl.OnEnemyKilled(this);
     }
 
     onTick()
     {
         if(this.getHP() <= 0)
         {
-            OnKilled(this);
-            destroy();
+            this.OnKilled();
+            this.destroy();
         }
 
     }
@@ -37,5 +34,5 @@ export default class EnemyBehaviour extends ISpriteInstance
     getRewardValue = () => this.instVars.RewardValue;
     
 
-    getDamageAmount = () => this.instVars.getDamageAmount;
+    getDamageAmount = () => this.instVars.DamageAmount;
 }

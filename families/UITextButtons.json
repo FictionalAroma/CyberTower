@@ -1,0 +1,14 @@
+{
+	"name": "UITextButtons",
+	"plugin-id": "Text",
+	"sid": 937074583874447,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"LivesValue",
+		"MoneyLabel",
+		"LivesLabel",
+		"MoneyValue"
+	]
+}
