@@ -1,2 +1,4 @@
 .vscode/
+/progressshots
 *.uistate.json
+*.c3p

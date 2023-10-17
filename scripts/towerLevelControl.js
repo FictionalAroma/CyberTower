@@ -1,6 +1,5 @@
 export default class TowerLevelControl
 {
-    tapDelay = 0.25;
     constructor(runtime, layout, level)
     {
         this.runtime = runtime;
@@ -9,19 +8,16 @@ export default class TowerLevelControl
         this.towerLayer = layout.getLayer(2);
         this.gridLayer = layout.getLayer(0);
 
-        layout.addEventListener("beforelayoutstart", () => this.SetupLevel());
-        layout.addEventListener("afterlayoutend", () => this.Teardown());
+        layout.addEventListener("beforelayoutstart", this.SetupLevel);
+        layout.addEventListener("afterlayoutend", this.Teardown);
 
     }
 
-    async SetupLevel()
+     SetupLevel = () =>
     {
         this.tilemap = this.runtime.objects.Tilemap.getFirstInstance();
         this.spawnPoint = this.runtime.objects.SpawnPoint.getFirstInstance();
         this.TowerMap = makeArray(this.tilemap.mapDisplayWidth, this.tilemap.mapDisplayHeight, false)
-
-        this.runtime.addEventListener("pointerdown", (pointerEvent) => this.OnPointerDown(pointerEvent));
-        this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
 
         this.livesDisplay = this.runtime.objects.LivesValue.getFirstInstance();
         this.moneyDisplay = this.runtime.objects.MoneyValue.getFirstInstance();
@@ -38,26 +34,29 @@ export default class TowerLevelControl
 
     }
 
-    OnPointerDown(pointerEvent)
-    {
-        if(this.gameOverHit) return;
-        this.currentTapDelay = this.tapDelay;
-    }
 
-    OnPointerUp(pointerEvent)
-    {
-        if(this.gameOverHit) return;
-        if(this.currentTapDelay > 0) 
-        {
-            this.OnTap(pointerEvent);
-        }
-    
-    }
+    OnTap = (pointerEvent) =>
+    {  
+        if(this.gameOverHit || this.runtime.globalVars.Paused ) return;
 
-    OnTap(pointerEvent)
-    {       
+     
         let mouseXYAr = this.towerLayer.cssPxToLayer(pointerEvent.clientX, pointerEvent.clientY);
+
+        // go through each family of objects to ignore
+        // if we find we are clicking on litterally any, return out do nothing
+        const familiesToIgnoreIfClick = ["UITextButtons", "UIButtons", "UIOverlays"];
+        
+        // do an any of families has any clicked items, if yes, bail method 
+        if(familiesToIgnoreIfClick.some(family => 
+            this.runtime.objects[family].some(wi => 
+                wi.containsPoint(mouseXYAr[0], mouseXYAr[1]))))
+            return;
+        
+
         const towers = this.runtime.objects.Towers.getAllInstances();
+
+
+
         const foundTower = towers.find(s => s.containsPoint(mouseXYAr[0], mouseXYAr[1]));
         if(foundTower == null) 
         {
@@ -82,7 +81,7 @@ export default class TowerLevelControl
         }
     }
 
-    OnTick(runtime) {
+    OnTick = (runtime) => {
         this.currentTapDelay -= runtime.dt;
 
         runtime.objects.Enemy.getAllInstances().forEach(en=> {
@@ -90,11 +89,11 @@ export default class TowerLevelControl
         });
     }
 
-    Teardown()
+    Teardown = () =>
     {
-        this.layout.removeEventListener("beforelayoutstart", () => this.SetupLevel());
-        this.runtime.removeEventListener("pointerdown", (pointerEvent) => this.OnPointerDown(pointerEvent));
-        this.runtime.addEventListener("pointerup", (pointerEvent) => this.OnPointerUp(pointerEvent));
+        this.layout.removeEventListener("beforelayoutstart", this.SetupLevel);
+        this.runtime.removeEventListener("pointerdown", this.OnPointerDown);
+        this.runtime.addEventListener("pointerup", this.OnPointerUp);
     }
 
     OnEnemyKilled(en)

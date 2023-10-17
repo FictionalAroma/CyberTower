@@ -295,7 +295,8 @@
 			"LevelRepo",
 			"Splash",
 			"MainMenu",
-			"UIRepo"
+			"UIRepo",
+			"Level1"
 		],
 		"subfolders": [
 			{
@@ -378,6 +379,20 @@
 					],
 					"subfolders": [],
 					"name": "objectTypes"
+				},
+				{
+					"items": [
+						{
+							"name": "pointerhelper.js",
+							"type": "text/javascript",
+							"sid": 858610314511769,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "helpers"
 				}
 			]
 		},
