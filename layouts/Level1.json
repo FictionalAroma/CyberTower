@@ -1,5 +1,5 @@
 {
-	"name": "Level0",
+	"name": "Level1",
 	"layers": [
 		{
 			"name": "Grid",
@@ -20,7 +20,7 @@
 						"tile-y-drawing-offset": 0,
 						"drawing-mode": "top-to-right"
 					},
-					"uid": 508238,
+					"uid": 438148,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -44,7 +44,7 @@
 							"height": 12,
 							"max-width": 52,
 							"max-height": 26,
-							"data": "2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,7x2,14x1,3x0,8x1,2,14x1,3x0,8x1,2,14x1,3x0,8x1,2,14x1,3x0,8x1,2,2x1,4x2,8x1,3x0,8x1,2,5x1,2,8x1,3x0,8x1,2,5x1,2,8x1,3x0,7x1,2x2,5x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,3x2,4x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,55x0"
+							"data": "2x1,2,20x1,3x0,2x1,6x2,15x1,3x0,7x1,2,15x1,3x0,7x1,2,15x1,3x0,7x1,2,15x1,3x0,7x1,2,15x1,3x0,2x1,6x2,15x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,20x1,3x0,2x1,2,8x1,4x2,8x1,3x0,2x1,6x2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,7x1,2,6x1,2,8x1,3x0,2x1,6x2,6x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,14x1,2,8x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,3x0,23x1,55x0"
 						},
 						"tile-width": 64,
 						"tile-height": 64,
@@ -70,7 +70,7 @@
 					}
 				}
 			],
-			"sid": 484369744225115,
+			"sid": 115614724014371,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -112,7 +112,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 847115,
+					"uid": 237636,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -125,8 +125,8 @@
 						}
 					},
 					"world": {
-						"x": 1310,
-						"y": 608,
+						"x": 1251,
+						"y": 156,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -150,7 +150,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 337195,
+					"uid": 778593,
 					"instanceVariables": {
 						"SpawnDelay": 1
 					},
@@ -185,7 +185,7 @@
 					}
 				}
 			],
-			"sid": 202892845038904,
+			"sid": 762808726922897,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -218,7 +218,7 @@
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [],
-			"sid": 321464513151465,
+			"sid": 682788234160770,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -260,7 +260,7 @@
 						"enable-collisions": false,
 						"live-preview": false
 					},
-					"uid": 318770,
+					"uid": 627953,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -277,8 +277,8 @@
 						}
 					},
 					"world": {
-						"x": 1568,
-						"y": 36,
+						"x": 1566.3754610766848,
+						"y": 34.39397312161116,
 						"width": 69.24907784663054,
 						"height": 70.78794624322232,
 						"originX": 0.5,
@@ -317,7 +317,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 495413,
+					"uid": 493417,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -374,7 +374,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 464911,
+					"uid": 349489,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -431,7 +431,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 953425,
+					"uid": 623548,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -488,7 +488,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 896428,
+					"uid": 627704,
 					"instanceVariables": {},
 					"behaviors": {
 						"NoSave": {
@@ -545,7 +545,7 @@
 						"origin": "center",
 						"read-aloud": false
 					},
-					"uid": 296864,
+					"uid": 269302,
 					"instanceVariables": {},
 					"behaviors": {},
 					"effects": {
@@ -574,7 +574,7 @@
 					}
 				}
 			],
-			"sid": 200564551725230,
+			"sid": 652865109806360,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -611,7 +611,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 712965221883064,
+					"sid": 705475969001313,
 					"effectTypes": [],
 					"isInitiallyVisible": false,
 					"isInitiallyInteractive": false,
@@ -644,7 +644,7 @@
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [],
-					"sid": 730434063160450,
+					"sid": 544383834311876,
 					"effectTypes": [],
 					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
@@ -687,166 +687,9 @@
 						"origin": "center",
 						"seams": "overlap"
 					},
-					"uid": 541938,
+					"uid": 232203,
 					"instanceVariables": {},
 					"behaviors": {},
-					"template": {
-						"mode": "replica",
-						"templateName": "",
-						"sourceTemplateName": "PauseMenu",
-						"components": [
-							{
-								"id": "plugin",
-								"component": [
-									{
-										"key": "plugin",
-										"state": [
-											[
-												"left-margin",
-												true
-											],
-											[
-												"right-margin",
-												true
-											],
-											[
-												"top-margin",
-												true
-											],
-											[
-												"bottom-margin",
-												true
-											],
-											[
-												"edges",
-												true
-											],
-											[
-												"fill",
-												true
-											],
-											[
-												"initially-visible",
-												true
-											],
-											[
-												"origin",
-												true
-											],
-											[
-												"seams",
-												true
-											]
-										]
-									}
-								]
-							},
-							{
-								"id": "instance-variable",
-								"component": [
-									{
-										"key": "instance-variable",
-										"state": []
-									}
-								]
-							},
-							{
-								"id": "behavior",
-								"component": []
-							},
-							{
-								"id": "effect",
-								"component": []
-							},
-							{
-								"id": "world-instance",
-								"component": [
-									{
-										"key": "world-instance",
-										"state": [
-											[
-												"x",
-												false
-											],
-											[
-												"y",
-												false
-											],
-											[
-												"z",
-												true
-											],
-											[
-												"w",
-												true
-											],
-											[
-												"h",
-												true
-											],
-											[
-												"a",
-												true
-											],
-											[
-												"o",
-												true
-											],
-											[
-												"c",
-												true
-											],
-											[
-												"sx",
-												true
-											],
-											[
-												"sy",
-												true
-											],
-											[
-												"bm",
-												true
-											],
-											[
-												"twpx",
-												true
-											],
-											[
-												"twpy",
-												true
-											],
-											[
-												"twpz",
-												true
-											],
-											[
-												"twpw",
-												true
-											],
-											[
-												"twph",
-												true
-											],
-											[
-												"twpa",
-												true
-											],
-											[
-												"dwp",
-												true
-											],
-											[
-												"ssm",
-												true
-											]
-										]
-									}
-								]
-							}
-						],
-						"replicasUIDs": null
-					},
 					"world": {
 						"x": 782,
 						"y": -330,
@@ -865,7 +708,7 @@
 					}
 				}
 			],
-			"sid": 534750429881986,
+			"sid": 589270222044244,
 			"effectTypes": [],
 			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
@@ -894,7 +737,7 @@
 			"global": false
 		}
 	],
-	"sid": 503960423826650,
+	"sid": 767885828565607,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1600,

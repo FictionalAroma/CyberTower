@@ -4,6 +4,7 @@ import {LevelSelect} from "./LevelSelect.js";
 import TowerLevelControl from "./towerLevelControl.js";
 import {LoadLevelData} from "./Data/levelData.js"
 import EnemyBehaviour from "./objectTypes/EnemyBehavior.js";
+import PointerHelper from "./helpers/pointerhelper.js";
 
 runOnStartup(async runtime =>
 {
@@ -20,9 +21,8 @@ async function OnBeforeProjectStart(runtime)
 	// Code to run just before 'On start of layout' on
 	// the first layout. Loading has finished and initial
 	// instances are created and available to use here.
-	
 	runtime.addEventListener("tick", () => Tick(runtime));
-
+	runtime.PointerHelper = new PointerHelper(runtime, (pointerevernt) => OnTap(pointerevernt, runtime));
 	
 	
 	var menuLayout = runtime.getLayout("MainMenu");
@@ -48,9 +48,18 @@ async function ConfigureCustomTypes(runtime)
 
 function Tick(runtime)
 {
+	runtime.PointerHelper.OnTick(runtime);
 	if(runtime.towerLevelControl !=null)
 	{
 		runtime.towerLevelControl.OnTick(runtime);
+	}
+}
+
+function OnTap(pointerEvent, runtime)
+{
+	if(runtime.towerLevelControl !=null)
+	{
+		runtime.towerLevelControl.OnTap(pointerEvent);
 	}
 }
 
