@@ -87,7 +87,9 @@
 					},
 					"uid": 784832,
 					"instanceVariables": {
-						"BulletDamage": 5
+						"BulletDamage": 5,
+						"UpgradeCost": 20,
+						"UpgradeTemplateName": "BasicTower2"
 					},
 					"behaviors": {
 						"TowerTurret": {
@@ -110,9 +112,209 @@
 							"properties": {}
 						}
 					},
+					"template": {
+						"mode": "template",
+						"templateName": "BasicTower1",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "BulletDamage",
+												"state": true
+											},
+											{
+												"iv": "UpgradeCost",
+												"state": true
+											},
+											{
+												"iv": "UpgradeTemplateName",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "TowerTurret",
+										"state": [
+											[
+												"range",
+												true
+											],
+											[
+												"rate-of-fire",
+												true
+											],
+											[
+												"rotate",
+												true
+											],
+											[
+												"rotate-speed",
+												true
+											],
+											[
+												"target-mode",
+												true
+											],
+											[
+												"predictive-aim",
+												true
+											],
+											[
+												"projectile-speed",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "NoSave",
+										"state": []
+									},
+									{
+										"key": "DestroyOutsideLayout",
+										"state": []
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
 					"world": {
-						"x": 465,
-						"y": 276,
+						"x": 457.5619834710744,
+						"y": 274.3471074380165,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,
@@ -139,6 +341,7 @@
 					"uid": 573503,
 					"instanceVariables": {
 						"TargetID": 0,
+						"DamageAmount": 0,
 						"Target": 0
 					},
 					"behaviors": {
@@ -188,7 +391,9 @@
 					},
 					"uid": 126045,
 					"instanceVariables": {
-						"BulletDamage": 10
+						"BulletDamage": 10,
+						"UpgradeCost": 0,
+						"UpgradeTemplateName": ""
 					},
 					"behaviors": {
 						"TowerTurret": {
@@ -211,9 +416,209 @@
 							"properties": {}
 						}
 					},
+					"template": {
+						"mode": "template",
+						"templateName": "BasicTower2",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"initial-animation",
+												true
+											],
+											[
+												"initial-frame",
+												true
+											],
+											[
+												"enable-collisions",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "BulletDamage",
+												"state": true
+											},
+											{
+												"iv": "UpgradeCost",
+												"state": true
+											},
+											{
+												"iv": "UpgradeTemplateName",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "TowerTurret",
+										"state": [
+											[
+												"range",
+												true
+											],
+											[
+												"rate-of-fire",
+												true
+											],
+											[
+												"rotate",
+												true
+											],
+											[
+												"rotate-speed",
+												true
+											],
+											[
+												"target-mode",
+												true
+											],
+											[
+												"predictive-aim",
+												true
+											],
+											[
+												"projectile-speed",
+												true
+											],
+											[
+												"use-collision-cells",
+												true
+											],
+											[
+												"enabled",
+												true
+											]
+										]
+									},
+									{
+										"key": "NoSave",
+										"state": []
+									},
+									{
+										"key": "DestroyOutsideLayout",
+										"state": []
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
 					"world": {
-						"x": 463,
-						"y": 346,
+						"x": 455.97520661157023,
+						"y": 367.48760330578517,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5,

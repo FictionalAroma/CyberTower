@@ -603,6 +603,39 @@
 			"global": false
 		},
 		{
+			"name": "TowerMenu",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 321279341401900,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "MenuOverlay",
 			"overriden": 1,
 			"subLayers": [],
@@ -624,9 +657,9 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",

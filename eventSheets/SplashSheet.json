@@ -2,6 +2,10 @@
 	"name": "SplashSheet",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "UIOverlays"
+		},
+		{
 			"eventType": "variable",
 			"name": "LoaderLayoutComplete",
 			"type": "boolean",

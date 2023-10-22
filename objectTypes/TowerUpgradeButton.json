@@ -1,7 +1,7 @@
 {
-	"name": "basicTower",
+	"name": "TowerUpgradeButton",
 	"plugin-id": "Sprite",
-	"sid": 982214902909017,
+	"sid": 226133186598801,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,24 +11,32 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 49,
+						"height": 49,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2444657,
+						"imageSpriteId": 4754193,
 						"collisionPoly": {
 							"points": [
-								1,
+								0.061224489795918366,
+								0,
+								0.9387755102040817,
 								0,
 								1,
+								0.04081632653061224,
+								1,
+								0.9387755102040817,
+								0.9591836734693877,
+								1,
+								0.04081632653061224,
 								1,
 								0,
-								1,
-								0,
-								0
+								0.9591836734693877,
+								0.02040816326530612,
+								0.02040816326530612
 							]
 						},
 						"useCollisionPoly": true,
@@ -36,8 +44,8 @@
 						"tag": ""
 					}
 				],
-				"sid": 162735632088799,
-				"name": "Animation 1",
+				"sid": 292348115959860,
+				"name": "Default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

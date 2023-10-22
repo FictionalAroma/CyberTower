@@ -156,6 +156,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "destroy",
 			"name": "Destroy outside layout",
 			"author": "Scirra",
@@ -190,7 +197,9 @@
 			"SpriteFont",
 			"VSCodePlugin",
 			"Internationalization",
-			"HTMLElement"
+			"HTMLElement",
+			"TowerSellButton",
+			"TowerUpgradeButton"
 		],
 		"subfolders": [
 			{
@@ -248,7 +257,7 @@
 			{
 				"items": [
 					"pause",
-					"GlassPanel",
+					"TowerUpgradePanel",
 					"MoneyLabel",
 					"MoneyValue",
 					"LivesValue",
@@ -281,6 +290,13 @@
 				"RestartButton",
 				"ResumeButton",
 				"ReturnToMenuButton"
+			]
+		},
+		{
+			"members": [
+				"TowerUpgradePanel",
+				"TowerSellButton",
+				"TowerUpgradeButton"
 			]
 		}
 	],

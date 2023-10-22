@@ -6,7 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"GlassPanel",
+		"TowerUpgradePanel",
 		"PauseMenu"
 	]
 }

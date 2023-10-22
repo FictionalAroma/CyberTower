@@ -2,7 +2,29 @@
 	"name": "Towers",
 	"plugin-id": "Sprite",
 	"sid": 509489715009077,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "BulletDamage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 889504139291996
+		},
+		{
+			"name": "UpgradeCost",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 908082049637061
+		},
+		{
+			"name": "UpgradeTemplateName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 791609593692376
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Turret",

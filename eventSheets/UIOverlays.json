@@ -232,6 +232,63 @@
 				}
 			],
 			"sid": 683336956014822
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TowerOverlays",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 895064978834470
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "TowerUpgradePanel",
+							"sid": 601681996015550,
+							"parameters": {
+								"child": "TowerUpgradeButton",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": true,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "TowerUpgradePanel",
+							"sid": 344630471073834,
+							"parameters": {
+								"child": "TowerSellButton",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": true,
+								"destroy-with-parent": true
+							}
+						}
+					],
+					"sid": 246240694922506
+				}
+			],
+			"sid": 640166384906382
 		}
 	],
 	"sid": 355535348516631

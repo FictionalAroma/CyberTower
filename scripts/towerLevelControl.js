@@ -90,6 +90,10 @@ export default class TowerLevelControl
                 }
             }
         }
+        else
+        {
+            
+        }
     }
 
     OnTick = (runtime) => {

@@ -389,21 +389,21 @@
 						{
 							"id": "on-created",
 							"objectClass": "Towers",
-							"sid": 138643451536226
+							"sid": 601909036383033
 						}
 					],
 					"actions": [
 						{
 							"id": "add-object-to-target",
 							"objectClass": "Towers",
-							"sid": 366707494533211,
+							"sid": 288563353665804,
 							"behaviorType": "TowerTurret",
 							"parameters": {
 								"target": "Enemy"
 							}
 						}
 					],
-					"sid": 420995207125024
+					"sid": 355333723180327
 				},
 				{
 					"eventType": "block",
@@ -411,7 +411,7 @@
 						{
 							"id": "on-shoot",
 							"objectClass": "Towers",
-							"sid": 796553996962013,
+							"sid": 703437650051251,
 							"behaviorType": "TowerTurret"
 						}
 					],
@@ -419,7 +419,7 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Towers",
-							"sid": 480563841779348,
+							"sid": 632162094882724,
 							"parameters": {
 								"object": "Bullet",
 								"layer": "1",
@@ -430,105 +430,124 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Bullet",
-							"sid": 432017648175490,
+							"sid": 180292184941661,
 							"parameters": {
 								"instance-variable": "TargetID",
 								"value": "Towers.TowerTurret.TargetUID"
 							}
-						}
-					],
-					"sid": 525528053433047
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+						},
 						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 224696197501566,
+							"id": "set-instvar-value",
+							"objectClass": "Bullet",
+							"sid": 307548231871574,
 							"parameters": {
-								"object": "Bullets"
+								"instance-variable": "DamageAmount",
+								"value": "Towers.BulletDamage"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 432318964426587,
+					"sid": 273747314873992
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Bullets",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-unique-id",
-									"objectClass": "Enemy",
-									"sid": 750712948391583,
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 581987806601240,
 									"parameters": {
-										"unique-id": "Bullets.TargetID"
+										"object": "Bullets"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 194672820200172,
+							"children": [
 								{
-									"id": "set-angle-toward-position",
-									"objectClass": "Bullets",
-									"sid": 575711688392130,
-									"parameters": {
-										"x": "Enemy.X",
-										"y": "Enemy.Y"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "Enemy",
+											"sid": 710765125979026,
+											"parameters": {
+												"unique-id": "Bullets.TargetID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "Bullets",
+											"sid": 303779192879484,
+											"parameters": {
+												"x": "Enemy.X",
+												"y": "Enemy.Y"
+											}
+										}
+									],
+									"sid": 802920199679043
 								}
-							],
-							"sid": 489253282316288
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "Bullets",
-							"sid": 316385555316991,
-							"parameters": {
-								"object": "Enemy"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 775926177175315,
-					"children": [
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
+									"id": "on-collision-with-another-object",
 									"objectClass": "Bullets",
-									"sid": 708766597846558,
+									"sid": 849960229744285,
 									"parameters": {
-										"instance-variable": "TargetID",
-										"comparison": 0,
-										"value": "Enemy.UID"
+										"object": "Enemy"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 437769540707377,
+							"children": [
 								{
-									"id": "destroy",
-									"objectClass": "Bullets",
-									"sid": 416813115136195
-								},
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Enemy",
-									"sid": 896482077609786,
-									"parameters": {
-										"instance-variable": "HP",
-										"value": "5"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Bullets",
+											"sid": 619176155707616,
+											"parameters": {
+												"instance-variable": "TargetID",
+												"comparison": 0,
+												"value": "Enemy.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Bullets",
+											"sid": 964621840632988
+										},
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Enemy",
+											"sid": 272651416906426,
+											"parameters": {
+												"instance-variable": "HP",
+												"value": "Bullets.DamageAmount"
+											}
+										}
+									],
+									"sid": 663462719171203
 								}
-							],
-							"sid": 812421488381874
+							]
 						}
-					]
+					],
+					"sid": 147641349833209
 				}
 			],
 			"sid": 351355344654621

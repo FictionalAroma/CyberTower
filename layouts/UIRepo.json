@@ -45,39 +45,6 @@
 							1
 						]
 					}
-				},
-				{
-					"type": "GlassPanel",
-					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "stretch",
-						"fill": "stretch",
-						"initially-visible": true,
-						"origin": "top-left",
-						"seams": "overlap"
-					},
-					"uid": 963452,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1453,
-						"y": 28,
-						"width": 100,
-						"height": 100,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
 			"sid": 795973885408239,
@@ -107,6 +74,318 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": false
+		},
+		{
+			"name": "TowerMenu",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TowerUpgradePanel",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "center",
+						"seams": "overlap"
+					},
+					"uid": 917693,
+					"instanceVariables": {
+						"TowerUID": 0
+					},
+					"behaviors": {
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						},
+						"NoSave": {
+							"properties": {}
+						}
+					},
+					"template": {
+						"mode": "template",
+						"templateName": "\"TowerSellMenu\"",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": [
+									{
+										"key": "plugin",
+										"state": [
+											[
+												"left-margin",
+												true
+											],
+											[
+												"right-margin",
+												true
+											],
+											[
+												"top-margin",
+												true
+											],
+											[
+												"bottom-margin",
+												true
+											],
+											[
+												"edges",
+												true
+											],
+											[
+												"fill",
+												true
+											],
+											[
+												"initially-visible",
+												true
+											],
+											[
+												"origin",
+												true
+											],
+											[
+												"seams",
+												true
+											]
+										]
+									}
+								]
+							},
+							{
+								"id": "instance-variable",
+								"component": [
+									{
+										"key": "instance-variable",
+										"state": [
+											{
+												"iv": "TowerUID",
+												"state": true
+											}
+										]
+									}
+								]
+							},
+							{
+								"id": "behavior",
+								"component": [
+									{
+										"key": "BoundToLayout",
+										"state": [
+											[
+												"bound-by",
+												true
+											]
+										]
+									},
+									{
+										"key": "NoSave",
+										"state": []
+									}
+								]
+							},
+							{
+								"id": "effect",
+								"component": []
+							},
+							{
+								"id": "world-instance",
+								"component": [
+									{
+										"key": "world-instance",
+										"state": [
+											[
+												"x",
+												false
+											],
+											[
+												"y",
+												false
+											],
+											[
+												"z",
+												true
+											],
+											[
+												"w",
+												true
+											],
+											[
+												"h",
+												true
+											],
+											[
+												"a",
+												true
+											],
+											[
+												"o",
+												true
+											],
+											[
+												"c",
+												true
+											],
+											[
+												"sx",
+												true
+											],
+											[
+												"sy",
+												true
+											],
+											[
+												"bm",
+												true
+											],
+											[
+												"twpx",
+												true
+											],
+											[
+												"twpy",
+												true
+											],
+											[
+												"twpz",
+												true
+											],
+											[
+												"twpw",
+												true
+											],
+											[
+												"twph",
+												true
+											],
+											[
+												"twpa",
+												true
+											],
+											[
+												"dwp",
+												true
+											],
+											[
+												"ssm",
+												true
+											]
+										]
+									}
+								]
+							}
+						],
+						"replicasUIDs": null
+					},
+					"world": {
+						"x": 101,
+						"y": 221,
+						"width": 172.0353779044031,
+						"height": 91.78456711574268,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TowerSellButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 843269,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 139.42976127183147,
+						"y": 219.62050128251784,
+						"width": 76.04733283245682,
+						"height": 72.29075882794893,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TowerUpgradeButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 240515,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 59.79039897675091,
+						"y": 220.3718236726894,
+						"width": 76.04733283245682,
+						"height": 72.29075882794893,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 368394619777103,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": true
 		},
 		{
 			"name": "MenuOverlay",
@@ -153,10 +432,10 @@
 						{
 							"type": "PauseMenu",
 							"properties": {
-								"left-margin": 16,
-								"right-margin": 16,
-								"top-margin": 16,
-								"bottom-margin": 16,
+								"left-margin": 24,
+								"right-margin": 24,
+								"top-margin": 24,
+								"bottom-margin": 24,
 								"edges": "tile",
 								"fill": "tile",
 								"initially-visible": true,
@@ -597,9 +876,9 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
 			"drawOrder": "z-order",
