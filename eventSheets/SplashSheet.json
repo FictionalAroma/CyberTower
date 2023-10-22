@@ -65,16 +65,11 @@
 					}
 				},
 				{
-					"id": "create-object",
+					"id": "load-layout-images",
 					"objectClass": "System",
-					"sid": 374051159589156,
+					"sid": 797125494984376,
 					"parameters": {
-						"object-to-create": "PauseMenu",
-						"layer": "0",
-						"x": "0",
-						"y": "0",
-						"create-hierarchy": true,
-						"template-name": "\"PauseMenu\""
+						"layout": "LevelRepo"
 					}
 				}
 			],
@@ -148,7 +143,7 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 583708190756076,
+					"sid": 838223707379594,
 					"parameters": {
 						"layout": "MainMenu"
 					}

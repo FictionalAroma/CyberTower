@@ -1,7 +1,7 @@
 {
-	"name": "BasicEnemy",
+	"name": "BasicEnemy2",
 	"plugin-id": "Sprite",
-	"sid": 641307884798151,
+	"sid": 992469690636760,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5983604,
+						"imageSpriteId": 958415,
 						"collisionPoly": {
 							"points": [
 								0.03125,
@@ -36,7 +36,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 984409879066112,
+				"sid": 389367158608951,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

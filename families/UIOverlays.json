@@ -1,0 +1,12 @@
+{
+	"name": "UIOverlays",
+	"plugin-id": "NinePatch",
+	"sid": 252643168569428,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"GlassPanel",
+		"PauseMenu"
+	]
+}

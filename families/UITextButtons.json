@@ -11,6 +11,8 @@
 		"LivesLabel",
 		"MoneyValue",
 		"ReturnToMenuButton",
-		"ResumeButton"
+		"ResumeButton",
+		"RestartButton",
+		"OptionsButton"
 	]
 }

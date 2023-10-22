@@ -61,6 +61,7 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"BasicEnemy"
+		"BasicEnemy",
+		"BasicEnemy2"
 	]
 }

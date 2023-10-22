@@ -7,10 +7,6 @@ export default class TowerLevelControl
         this.level = level;
         this.towerLayer = layout.getLayer(2);
         this.gridLayer = layout.getLayer(0);
-
-        layout.addEventListener("beforelayoutstart", this.SetupLevel);
-        layout.addEventListener("afterlayoutend", this.Teardown);
-
     }
 
      SetupLevel = () =>
@@ -23,7 +19,7 @@ export default class TowerLevelControl
         this.moneyDisplay = this.runtime.objects.MoneyValue.getFirstInstance();
 
 
-        this.runtime.objects.Enemy.addEventListener("instancecreate", (e) => e.instance.setup(this))
+        this.runtime.objects.Enemy.addEventListener("instancecreate", this.SetupEnemy);
         
         this.currentMoney = this.level.startMoney;
         this.currentLives = this.level.startLives;
@@ -33,6 +29,13 @@ export default class TowerLevelControl
 
 
     }
+
+    Teardown = ()=>
+    {
+        this.runtime.objects.Enemy.removeEventListener("instancecreate", this.SetupEnemy)
+    }
+
+    SetupEnemy = (e) => e.instance.setup(this)
 
 
     OnTap = (pointerEvent) =>
@@ -48,9 +51,17 @@ export default class TowerLevelControl
         
         // do an any of families has any clicked items, if yes, bail method 
         if(familiesToIgnoreIfClick.some(family => 
-            this.runtime.objects[family].some(wi => 
-                wi.containsPoint(mouseXYAr[0], mouseXYAr[1]))))
+            this.runtime.objects[family].getAllInstances().some(
+                wi => 
+                    wi.layer.isSelfAndParentsVisible &&
+                    wi.layer.isSelfAndParentsInteractive &&
+                    wi.isVisible &&
+                    wi.containsPoint(mouseXYAr[0], mouseXYAr[1]))
+               ))
+        {
+            // bail out if ANY
             return;
+        }
         
 
         const towers = this.runtime.objects.Towers.getAllInstances();
@@ -89,19 +100,12 @@ export default class TowerLevelControl
         });
     }
 
-    Teardown = () =>
-    {
-        this.layout.removeEventListener("beforelayoutstart", this.SetupLevel);
-        this.runtime.removeEventListener("pointerdown", this.OnPointerDown);
-        this.runtime.addEventListener("pointerup", this.OnPointerUp);
-    }
-
-    OnEnemyKilled(en)
+    OnEnemyKilled = (en) =>
     {
         this.UpdateMoney(en.getRewardValue());
     }
 
-    OnEnemyArrive(en)
+    OnEnemyArrive = (en) =>
     {
         this.currentLives = Math.max(this.currentLives - en.getDamageAmount(),0);
         this.UpdateInfoDisplay();

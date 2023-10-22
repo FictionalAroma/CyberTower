@@ -203,7 +203,8 @@
 			{
 				"items": [
 					"BasicEnemy",
-					"StatusText"
+					"StatusText",
+					"BasicEnemy2"
 				],
 				"subfolders": [],
 				"name": "Enemys"
@@ -259,7 +260,9 @@
 						"items": [
 							"PauseMenu",
 							"ResumeButton",
-							"ReturnToMenuButton"
+							"ReturnToMenuButton",
+							"RestartButton",
+							"OptionsButton"
 						],
 						"subfolders": [],
 						"name": "Menus"
@@ -273,7 +276,9 @@
 	"containers": [
 		{
 			"members": [
+				"OptionsButton",
 				"PauseMenu",
+				"RestartButton",
 				"ResumeButton",
 				"ReturnToMenuButton"
 			]
@@ -285,7 +290,8 @@
 			"Towers",
 			"Bullets",
 			"UIButtons",
-			"UITextButtons"
+			"UITextButtons",
+			"UIOverlays"
 		],
 		"subfolders": []
 	},
@@ -311,7 +317,9 @@
 			"TowerSheet",
 			"MenuSheet",
 			"SplashSheet",
-			"globals"
+			"globals",
+			"UIOverlays",
+			"GoToMenu"
 		],
 		"subfolders": []
 	},

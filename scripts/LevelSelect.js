@@ -34,7 +34,7 @@ export class LevelSelect
 			this.buttonArray = this.runtime.objects.LevelSelectButton.getAllInstances();
 			this.buttonArray.forEach(button => 
 			{
-				button.addEventListener("click", () => this.loadLevel(this.runtime, button.levelToLoad))				
+				button.addEventListener("click", () => this.loadLevel(button.levelToLoad))				
 			});
 			
 			this.prevButton = this.runtime.objects.LevelSelectPrev.getFirstInstance();
@@ -103,6 +103,6 @@ export class LevelSelect
 	
 	loadLevel(levelNumber)
 	{
-		this.loadLevelCallback(0);
+		this.loadLevelCallback("level0");
 	}
 }
