@@ -20,6 +20,11 @@
 					"conditions": [],
 					"actions": [
 						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 933531198649427
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 618755494393881,
@@ -63,6 +68,11 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 360860011945930
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -134,6 +144,27 @@
 						}
 					],
 					"sid": 507712684134202
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 728006062912371,
+							"parameters": {
+								"object": "RestartButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 590842340859572
+						}
+					],
+					"sid": 882562312822078
 				}
 			],
 			"sid": 231294521430971

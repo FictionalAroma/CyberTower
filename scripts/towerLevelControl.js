@@ -7,10 +7,6 @@ export default class TowerLevelControl
         this.level = level;
         this.towerLayer = layout.getLayer(2);
         this.gridLayer = layout.getLayer(0);
-
-        layout.addEventListener("beforelayoutstart", this.SetupLevel);
-        layout.addEventListener("afterlayoutend", this.Teardown);
-
     }
 
      SetupLevel = () =>
@@ -23,7 +19,7 @@ export default class TowerLevelControl
         this.moneyDisplay = this.runtime.objects.MoneyValue.getFirstInstance();
 
 
-        this.runtime.objects.Enemy.addEventListener("instancecreate", (e) => e.instance.setup(this))
+        this.runtime.objects.Enemy.addEventListener("instancecreate", this.SetupEnemy);
         
         this.currentMoney = this.level.startMoney;
         this.currentLives = this.level.startLives;
@@ -33,6 +29,13 @@ export default class TowerLevelControl
 
 
     }
+
+    Teardown = ()=>
+    {
+        this.runtime.objects.Enemy.removeEventListener("instancecreate", this.SetupEnemy)
+    }
+
+    SetupEnemy = (e) => e.instance.setup(this)
 
 
     OnTap = (pointerEvent) =>
@@ -97,19 +100,12 @@ export default class TowerLevelControl
         });
     }
 
-    Teardown = () =>
-    {
-        this.layout.removeEventListener("beforelayoutstart", this.SetupLevel);
-        this.runtime.removeEventListener("pointerdown", this.OnPointerDown);
-        this.runtime.addEventListener("pointerup", this.OnPointerUp);
-    }
-
-    OnEnemyKilled(en)
+    OnEnemyKilled = (en) =>
     {
         this.UpdateMoney(en.getRewardValue());
     }
 
-    OnEnemyArrive(en)
+    OnEnemyArrive = (en) =>
     {
         this.currentLives = Math.max(this.currentLives - en.getDamageAmount(),0);
         this.UpdateInfoDisplay();

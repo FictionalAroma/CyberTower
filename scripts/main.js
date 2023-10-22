@@ -24,9 +24,18 @@ async function OnBeforeProjectStart(runtime)
 	runtime.addEventListener("tick", () => Tick(runtime));
 	runtime.PointerHelper = new PointerHelper(runtime, (pointerevernt) => OnTap(pointerevernt, runtime));
 	
+	runtime.getAllLayouts().forEach(layout => {
+		if(layout.name.toLowerCase().startsWith("level"))
+		{
+			layout.levelIndex = parseInt(layout.name.substring(5).trim());
+			layout.addEventListener("beforelayoutstart", () => LoadLevel(runtime, layout));
+
+			layout.addEventListener("afterlayoutend", ()=> TeardownLevel(runtime, layout))
+		}
+	})
 	
 	var menuLayout = runtime.getLayout("MainMenu");
-	runtime.levelSelect = new LevelSelect(runtime, menuLayout, (l) => LoadLevel(runtime, l));
+	runtime.levelSelect = new LevelSelect(runtime, menuLayout, (l) => runtime.goToLayout(l));
 	runtime.dataset = await LoadLevelData(runtime);
 	await runtime.levelSelect.SetLevelData(runtime.dataset);
 
@@ -63,13 +72,14 @@ function OnTap(pointerEvent, runtime)
 	}
 }
 
-function LoadLevel(runtime, levelIndex)
+function LoadLevel(runtime, layout)
 {
-	const levelToLoad = runtime.getLayout(`Level${levelIndex}`);
-	const levelData = runtime.dataset.levels[levelIndex]
-	if(levelToLoad != null)
-	{
-		runtime.towerLevelControl = new TowerLevelControl(runtime, levelToLoad, levelData);
-		runtime.goToLayout(levelToLoad.name);
-	}
+	const levelData = runtime.dataset.levels[layout.levelIndex]
+	runtime.towerLevelControl = new TowerLevelControl(runtime, layout, levelData);
+	runtime.towerLevelControl.SetupLevel();
+}
+
+function TeardownLevel(runtime, layout)
+{
+	runtime.towerLevelControl.Teardown();
 }

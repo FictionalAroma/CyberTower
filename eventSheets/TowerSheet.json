@@ -11,23 +11,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Paused",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 275448593444688
-		},
-		{
-			"eventType": "variable",
 			"name": "CurrentGameSpeed",
 			"type": "number",
 			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 921147858588330
+			"sid": 598684162463393
+		},
+		{
+			"eventType": "variable",
+			"name": "Paused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 304131201513401
 		},
 		{
 			"eventType": "variable",
@@ -37,7 +37,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 397880255006376
+			"sid": 493904046538983
 		},
 		{
 			"eventType": "group",
@@ -67,6 +67,10 @@
 							"parameters": {
 								"time-scale": "CurrentGameSpeed"
 							}
+						},
+						{
+							"callFunction": "SetupLevel",
+							"sid": 624542983798870
 						}
 					],
 					"sid": 934934550178570
@@ -96,6 +100,38 @@
 						}
 					],
 					"sid": 792399600845047
+				},
+				{
+					"functionName": "SetupLevel",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 530941217673729,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 532108394403214,
+							"parameters": {
+								"variable": "spawnCount",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 782274625270129
 				}
 			],
 			"sid": 971158629999309
