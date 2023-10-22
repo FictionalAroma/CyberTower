@@ -6,6 +6,10 @@
 			"includeSheet": "globals"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "UIOverlays"
+		},
+		{
 			"eventType": "variable",
 			"name": "Paused",
 			"type": "boolean",
@@ -24,6 +28,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 921147858588330
+		},
+		{
+			"eventType": "variable",
+			"name": "spawnCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 397880255006376
 		},
 		{
 			"eventType": "group",
@@ -220,20 +234,81 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 488307221108783,
+					"children": [
 						{
-							"id": "spawn-another-object",
-							"objectClass": "SpawnPoint",
-							"sid": 393376835858604,
-							"parameters": {
-								"object": "BasicEnemy",
-								"layer": "\"Enemies\"",
-								"image-point": "0",
-								"create-hierarchy": false
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 350654003487080,
+									"parameters": {
+										"variable": "spawnCount",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SpawnPoint",
+									"sid": 960787814100577,
+									"parameters": {
+										"object": "BasicEnemy2",
+										"layer": "\"Enemies\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 101960260021596,
+									"parameters": {
+										"variable": "spawnCount",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 463531369383718
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 640863814351215
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SpawnPoint",
+									"sid": 119797680173771,
+									"parameters": {
+										"object": "BasicEnemy",
+										"layer": "\"Enemies\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 130121655326775,
+									"parameters": {
+										"variable": "spawnCount",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 705677042206355
 						}
-					],
-					"sid": 488307221108783
+					]
 				},
 				{
 					"eventType": "block",
@@ -475,220 +550,6 @@
 					"sid": 493629504399870
 				}
 			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Pause Menu",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"functionName": "SetupPauseMenu",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "PauseMenu",
-							"sid": 135037576486574,
-							"parameters": {
-								"x": "LayoutWidth/2",
-								"y": "LayoutHeight/2"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "ResumeButton",
-							"sid": 430578601693304,
-							"parameters": {
-								"x": "PauseMenu.X",
-								"y": " (PauseMenu.Y - PauseMenu.Height/2) + ResumeButton.Height/2 + 32"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "ReturnToMenuButton",
-							"sid": 376687384094797,
-							"parameters": {
-								"x": "ResumeButton.X",
-								"y": "ResumeButton.Y + ReturnToMenuButton.Height + 32"
-							}
-						}
-					],
-					"sid": 808119538609057
-				},
-				{
-					"functionName": "Pause",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 618755494393881,
-							"parameters": {
-								"variable": "Paused",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 445095886876707,
-							"parameters": {
-								"time-scale": "0"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 693483748742658,
-							"parameters": {
-								"layer": "\"MenuLayer\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 524641406617225,
-							"parameters": {
-								"layer": "\"MenuLayer\"",
-								"interactive": true
-							}
-						}
-					],
-					"sid": 362612465853394
-				},
-				{
-					"functionName": "Unpause",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 117428365995672,
-							"parameters": {
-								"variable": "Paused",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 185199381612480,
-							"parameters": {
-								"time-scale": "CurrentGameSpeed"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 619024129875776,
-							"parameters": {
-								"layer": "\"MenuLayer\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 505982929919347,
-							"parameters": {
-								"layer": "\"MenuLayer\"",
-								"interactive": false
-							}
-						}
-					],
-					"sid": 793009195955171
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 506222168415334,
-							"parameters": {
-								"object": "ResumeButton"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Unpause",
-							"sid": 965758918655164
-						}
-					],
-					"sid": 768964315120046
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-tap-object",
-							"objectClass": "Touch",
-							"sid": 430494340881938,
-							"parameters": {
-								"object": "ReturnToMenuButton"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Unpause",
-							"sid": 302065328793995
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 472460725831467,
-							"parameters": {
-								"layout": "MainMenu"
-							}
-						}
-					],
-					"sid": 507712684134202
-				}
-			],
-			"sid": 231294521430971
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 699568904306502
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "SetupPauseMenu",
-					"sid": 464656301188584
-				}
-			],
-			"sid": 214958061539171
 		},
 		{
 			"functionName": "Gameover",

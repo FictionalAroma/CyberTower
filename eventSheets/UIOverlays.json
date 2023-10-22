@@ -1,0 +1,207 @@
+{
+	"name": "UIOverlays",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pause Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "Pause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 618755494393881,
+							"parameters": {
+								"variable": "Paused",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 445095886876707,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"callFunction": "ActivateOverlay",
+							"sid": 787894654003867
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 535670976584589,
+							"parameters": {
+								"layer": "\"PauseMenu\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 362612465853394
+				},
+				{
+					"functionName": "Unpause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 117428365995672,
+							"parameters": {
+								"variable": "Paused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 185199381612480,
+							"parameters": {
+								"time-scale": "CurrentGameSpeed"
+							}
+						},
+						{
+							"callFunction": "DeactivateOverlay",
+							"sid": 165160145572437
+						}
+					],
+					"sid": 793009195955171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 506222168415334,
+							"parameters": {
+								"object": "ResumeButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Unpause",
+							"sid": 965758918655164
+						}
+					],
+					"sid": 768964315120046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 430494340881938,
+							"parameters": {
+								"object": "ReturnToMenuButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Unpause",
+							"sid": 302065328793995
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 472460725831467,
+							"parameters": {
+								"layout": "MainMenu"
+							}
+						}
+					],
+					"sid": 507712684134202
+				}
+			],
+			"sid": 231294521430971
+		},
+		{
+			"functionName": "ActivateOverlay",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 233919244933828,
+					"parameters": {
+						"layer": "\"MenuOverlay\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 802910549254553,
+					"parameters": {
+						"layer": "\"MenuOverlay\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 635199122759658
+		},
+		{
+			"functionName": "DeactivateOverlay",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 211516472870821,
+					"parameters": {
+						"layer": "\"MenuOverlay\"",
+						"interactive": false
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 946663832197564,
+					"parameters": {
+						"layer": "\"MenuOverlay\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 683336956014822
+		}
+	],
+	"sid": 355535348516631
+}

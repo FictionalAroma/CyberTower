@@ -63,290 +63,12 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1205,
-						"y": 292,
+						"x": 1453,
+						"y": 28,
 						"width": 100,
 						"height": 100,
 						"originX": 0,
 						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "PauseMenu",
-					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "tile",
-						"fill": "tile",
-						"initially-visible": true,
-						"origin": "center",
-						"seams": "overlap"
-					},
-					"uid": 707735,
-					"instanceVariables": {},
-					"behaviors": {},
-					"template": {
-						"mode": "replica",
-						"templateName": "",
-						"sourceTemplateName": "PauseMenu",
-						"components": [
-							{
-								"id": "plugin",
-								"component": [
-									{
-										"key": "plugin",
-										"state": [
-											[
-												"left-margin",
-												true
-											],
-											[
-												"right-margin",
-												true
-											],
-											[
-												"top-margin",
-												true
-											],
-											[
-												"bottom-margin",
-												true
-											],
-											[
-												"edges",
-												true
-											],
-											[
-												"fill",
-												true
-											],
-											[
-												"initially-visible",
-												true
-											],
-											[
-												"origin",
-												true
-											],
-											[
-												"seams",
-												true
-											]
-										]
-									}
-								]
-							},
-							{
-								"id": "instance-variable",
-								"component": [
-									{
-										"key": "instance-variable",
-										"state": []
-									}
-								]
-							},
-							{
-								"id": "behavior",
-								"component": []
-							},
-							{
-								"id": "effect",
-								"component": []
-							},
-							{
-								"id": "world-instance",
-								"component": [
-									{
-										"key": "world-instance",
-										"state": [
-											[
-												"x",
-												false
-											],
-											[
-												"y",
-												false
-											],
-											[
-												"z",
-												true
-											],
-											[
-												"w",
-												true
-											],
-											[
-												"h",
-												true
-											],
-											[
-												"a",
-												true
-											],
-											[
-												"o",
-												true
-											],
-											[
-												"c",
-												true
-											],
-											[
-												"sx",
-												true
-											],
-											[
-												"sy",
-												true
-											],
-											[
-												"bm",
-												true
-											],
-											[
-												"twpx",
-												true
-											],
-											[
-												"twpy",
-												true
-											],
-											[
-												"twpz",
-												true
-											],
-											[
-												"twpw",
-												true
-											],
-											[
-												"twph",
-												true
-											],
-											[
-												"twpa",
-												true
-											],
-											[
-												"dwp",
-												true
-											],
-											[
-												"ssm",
-												true
-											]
-										]
-									}
-								]
-							}
-						],
-						"replicasUIDs": null
-					},
-					"world": {
-						"x": 958,
-						"y": 359,
-						"width": 778,
-						"height": 504,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ResumeButton",
-					"properties": {
-						"text": "Resume",
-						"enable-bbcode": true,
-						"font": "depixelhalbfett",
-						"size": 36,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "center",
-						"read-aloud": false
-					},
-					"uid": 175046,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 947,
-						"y": 254,
-						"width": 310,
-						"height": 122,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "ReturnToMenuButton",
-					"properties": {
-						"text": "Return to Menu",
-						"enable-bbcode": true,
-						"font": "depixelhalbfett",
-						"size": 36,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "center",
-						"read-aloud": false
-					},
-					"uid": 293589,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 949,
-						"y": 456,
-						"width": 310,
-						"height": 122,
-						"originX": 0.5,
-						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -385,6 +107,507 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": false
+		},
+		{
+			"name": "MenuOverlay",
+			"overriden": 0,
+			"subLayers": [
+				{
+					"name": "UIBackground",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [],
+					"sid": 152859189515283,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": false,
+					"color": [
+						1,
+						1,
+						1,
+						0.4
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": false,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": true
+				},
+				{
+					"name": "PauseMenu",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "PauseMenu",
+							"properties": {
+								"left-margin": 16,
+								"right-margin": 16,
+								"top-margin": 16,
+								"bottom-margin": 16,
+								"edges": "tile",
+								"fill": "tile",
+								"initially-visible": true,
+								"origin": "center",
+								"seams": "overlap"
+							},
+							"uid": 707735,
+							"instanceVariables": {},
+							"behaviors": {},
+							"template": {
+								"mode": "template",
+								"templateName": "PauseMenu",
+								"sourceTemplateName": "PauseMenu",
+								"components": [
+									{
+										"id": "plugin",
+										"component": [
+											{
+												"key": "plugin",
+												"state": [
+													[
+														"left-margin",
+														true
+													],
+													[
+														"right-margin",
+														true
+													],
+													[
+														"top-margin",
+														true
+													],
+													[
+														"bottom-margin",
+														true
+													],
+													[
+														"edges",
+														true
+													],
+													[
+														"fill",
+														true
+													],
+													[
+														"initially-visible",
+														true
+													],
+													[
+														"origin",
+														true
+													],
+													[
+														"seams",
+														true
+													]
+												]
+											}
+										]
+									},
+									{
+										"id": "instance-variable",
+										"component": [
+											{
+												"key": "instance-variable",
+												"state": []
+											}
+										]
+									},
+									{
+										"id": "behavior",
+										"component": []
+									},
+									{
+										"id": "effect",
+										"component": []
+									},
+									{
+										"id": "world-instance",
+										"component": [
+											{
+												"key": "world-instance",
+												"state": [
+													[
+														"x",
+														false
+													],
+													[
+														"y",
+														false
+													],
+													[
+														"z",
+														true
+													],
+													[
+														"w",
+														true
+													],
+													[
+														"h",
+														true
+													],
+													[
+														"a",
+														true
+													],
+													[
+														"o",
+														true
+													],
+													[
+														"c",
+														true
+													],
+													[
+														"sx",
+														true
+													],
+													[
+														"sy",
+														true
+													],
+													[
+														"bm",
+														true
+													],
+													[
+														"twpx",
+														true
+													],
+													[
+														"twpy",
+														true
+													],
+													[
+														"twpz",
+														true
+													],
+													[
+														"twpw",
+														true
+													],
+													[
+														"twph",
+														true
+													],
+													[
+														"twpa",
+														true
+													],
+													[
+														"dwp",
+														true
+													],
+													[
+														"ssm",
+														true
+													]
+												]
+											}
+										]
+									}
+								],
+								"replicasUIDs": null
+							},
+							"world": {
+								"x": 821,
+								"y": 374.5,
+								"width": 778,
+								"height": 583,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "ResumeButton",
+							"properties": {
+								"text": "Resume",
+								"enable-bbcode": true,
+								"font": "depixelhalbfett",
+								"size": 36,
+								"line-height": 0,
+								"bold": false,
+								"italic": false,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"icon-set": -1,
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
+							"uid": 175046,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 818,
+								"y": 161,
+								"width": 310,
+								"height": 122,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "ReturnToMenuButton",
+							"properties": {
+								"text": "Return to Menu",
+								"enable-bbcode": true,
+								"font": "depixelhalbfett",
+								"size": 36,
+								"line-height": 0,
+								"bold": false,
+								"italic": false,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"icon-set": -1,
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
+							"uid": 293589,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 819,
+								"y": 569,
+								"width": 310,
+								"height": 122,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
+					"sid": 648569921784545,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": true
+				},
+				{
+					"name": "Options Menu",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "RestartButton",
+							"properties": {
+								"text": "Restart Level",
+								"enable-bbcode": true,
+								"font": "depixelhalbfett",
+								"size": 36,
+								"line-height": 0,
+								"bold": false,
+								"italic": false,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"icon-set": -1,
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
+							"uid": 299709,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 816,
+								"y": 294,
+								"width": 393,
+								"height": 122,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						},
+						{
+							"type": "OptionsButton",
+							"properties": {
+								"text": "Options",
+								"enable-bbcode": true,
+								"font": "depixelhalbfett",
+								"size": 36,
+								"line-height": 0,
+								"bold": false,
+								"italic": false,
+								"color": [
+									0,
+									0,
+									0,
+									1
+								],
+								"horizontal-alignment": "center",
+								"vertical-alignment": "center",
+								"wrapping": "word",
+								"icon-set": -1,
+								"initially-visible": true,
+								"origin": "center",
+								"read-aloud": false
+							},
+							"uid": 390794,
+							"instanceVariables": {},
+							"behaviors": {},
+							"world": {
+								"x": 820,
+								"y": 430,
+								"width": 310,
+								"height": 122,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"angle": 0,
+								"zElevation": 0
+							}
+						}
+					],
+					"sid": 974497459541344,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": true
+				}
+			],
+			"instances": [],
+			"sid": 777020929287877,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": true
 		}
 	],
 	"sid": 887824406242796,
@@ -396,5 +619,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "orthographic",
-	"eventSheet": null
+	"eventSheet": "GoToMenu"
 }

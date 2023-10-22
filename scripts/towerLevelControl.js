@@ -48,9 +48,17 @@ export default class TowerLevelControl
         
         // do an any of families has any clicked items, if yes, bail method 
         if(familiesToIgnoreIfClick.some(family => 
-            this.runtime.objects[family].some(wi => 
-                wi.containsPoint(mouseXYAr[0], mouseXYAr[1]))))
+            this.runtime.objects[family].getAllInstances().some(
+                wi => 
+                    wi.layer.isSelfAndParentsVisible &&
+                    wi.layer.isSelfAndParentsInteractive &&
+                    wi.isVisible &&
+                    wi.containsPoint(mouseXYAr[0], mouseXYAr[1]))
+               ))
+        {
+            // bail out if ANY
             return;
+        }
         
 
         const towers = this.runtime.objects.Towers.getAllInstances();

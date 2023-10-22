@@ -37,7 +37,7 @@ async function ConfigureCustomTypes(runtime)
 
 	const customTypeMapping = [{
 		ObjectType: EnemyBehaviour,
-		ConstructObjectNames: ["BasicEnemy"] 
+		ConstructObjectNames: ["BasicEnemy", "BasicEnemy2"] 
 	}]
 	customTypeMapping.forEach(tm => {
 		const type = tm.ObjectType;
