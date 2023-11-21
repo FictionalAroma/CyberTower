@@ -5,6 +5,7 @@ import TowerLevelControl from "./towerLevelControl.js";
 import {LoadLevelData} from "./Data/levelData.js"
 import EnemyBehaviour from "./objectTypes/EnemyBehavior.js";
 import PointerHelper from "./helpers/pointerhelper.js";
+import TowerController from "./objectTypes/TowerController.js";
 
 runOnStartup(async runtime =>
 {
@@ -47,10 +48,18 @@ async function ConfigureCustomTypes(runtime)
 	const customTypeMapping = [{
 		ObjectType: EnemyBehaviour,
 		ConstructObjectNames: ["BasicEnemy", "BasicEnemy2"] 
+	},
+	{
+		ObjectType: TowerController,
+		ConstructObjectNames: ["BasicTower1", "BasicTower2"]
 	}]
 	customTypeMapping.forEach(tm => {
 		const type = tm.ObjectType;
-		tm.ConstructObjectNames.forEach(n => runtime.objects[n].setInstanceClass(type))
+		tm.ConstructObjectNames.forEach(n => {
+			const objType = runtime.objects[n]
+			if(objType != null)
+				objType.setInstanceClass(type)
+		})
 	})
 	
 }

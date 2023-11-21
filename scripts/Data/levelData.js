@@ -29,3 +29,19 @@ export class Level
 	}
 }
 
+
+export class TowerList
+{
+
+}
+
+export class Tower
+{
+	TemplateName = "";
+
+	constructor()
+	{
+
+	}
+}
+

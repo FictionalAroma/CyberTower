@@ -25,6 +25,8 @@ export default class TowerLevelControl
         this.currentLives = this.level.startLives;
         this.gameOverHit = false;
 
+        this.TowerUpgradePanel = this.runtime.objects.TowerUpgradePanel.getFirstInstance();
+
         this.UpdateInfoDisplay();
 
 

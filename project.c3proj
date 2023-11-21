@@ -197,9 +197,7 @@
 			"SpriteFont",
 			"VSCodePlugin",
 			"Internationalization",
-			"HTMLElement",
-			"TowerSellButton",
-			"TowerUpgradeButton"
+			"HTMLElement"
 		],
 		"subfolders": [
 			{
@@ -256,12 +254,6 @@
 			},
 			{
 				"items": [
-					"pause",
-					"TowerUpgradePanel",
-					"MoneyLabel",
-					"MoneyValue",
-					"LivesValue",
-					"LivesLabel",
 					"GameOverText"
 				],
 				"subfolders": [
@@ -275,6 +267,26 @@
 						],
 						"subfolders": [],
 						"name": "Menus"
+					},
+					{
+						"items": [
+							"LivesLabel",
+							"LivesValue",
+							"MoneyLabel",
+							"MoneyValue",
+							"pause"
+						],
+						"subfolders": [],
+						"name": "GameOverlay"
+					},
+					{
+						"items": [
+							"TowerUpgradePanel",
+							"TowerSellButton",
+							"TowerUpgradeButton"
+						],
+						"subfolders": [],
+						"name": "TowerMenu"
 					}
 				],
 				"name": "UI"
@@ -294,9 +306,9 @@
 		},
 		{
 			"members": [
-				"TowerUpgradePanel",
 				"TowerSellButton",
-				"TowerUpgradeButton"
+				"TowerUpgradeButton",
+				"TowerUpgradePanel"
 			]
 		}
 	],
@@ -396,6 +408,14 @@
 							"name": "EnemyBehavior.js",
 							"type": "text/javascript",
 							"sid": 937713511434252,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TowerController.js",
+							"type": "application/javascript",
+							"sid": 696193212399418,
 							"script-info": {
 								"purpose": "none"
 							}
