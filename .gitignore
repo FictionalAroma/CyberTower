@@ -2,3 +2,4 @@
 /progressshots
 *.uistate.json
 *.c3p
+ts-defs/

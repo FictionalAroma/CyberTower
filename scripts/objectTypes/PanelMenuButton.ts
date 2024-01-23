@@ -1,15 +1,15 @@
 export default class PanelMenuButton extends ISpriteInstance
 {
-    constructor(enabledTest)
+    enabledTest: () => boolean;
+    constructor(enabledTest: () => boolean)
     {
-        this.enabledTest = enabledTest;
         super();
+        this.enabledTest = enabledTest;
 
     }
 
     updateEnabed()
     {
         const enable = this.isVisible && this.enabledTest();
-        this.
     }
 }
