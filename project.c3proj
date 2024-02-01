@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 35800,
+	"savedWithRelease": 36802,
 	"name": "Cyber Tower",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -357,86 +357,40 @@
 				{
 					"name": "main.js",
 					"type": "application/javascript",
-					"sid": 982841286633094,
+					"sid": 477950999117523,
 					"script-info": {
 						"purpose": "main"
 					}
 				},
 				{
-					"name": "LevelSelect.js",
+					"name": "importsForEvents.js",
 					"type": "application/javascript",
-					"sid": 365320945164047,
+					"sid": 401874234686453,
 					"script-info": {
 						"purpose": "imports-for-events"
-					}
-				},
-				{
-					"name": "towerLevelControl.js",
-					"type": "application/javascript",
-					"sid": 100698016405386,
-					"script-info": {
-						"purpose": "none"
 					}
 				}
 			],
 			"subfolders": [
 				{
-					"items": [
-						{
-							"name": "playerData.js",
-							"type": "application/javascript",
-							"sid": 287893485520838,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "levelData.js",
-							"type": "application/javascript",
-							"sid": 315851505810176,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
+					"items": [],
 					"subfolders": [],
 					"name": "Data"
 				},
 				{
-					"items": [
-						{
-							"name": "EnemyBehavior.js",
-							"type": "text/javascript",
-							"sid": 937713511434252,
-							"script-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "TowerController.js",
-							"type": "application/javascript",
-							"sid": 696193212399418,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
+					"items": [],
 					"subfolders": [],
 					"name": "objectTypes"
 				},
 				{
-					"items": [
-						{
-							"name": "pointerhelper.js",
-							"type": "text/javascript",
-							"sid": 858610314511769,
-							"script-info": {
-								"purpose": "none"
-							}
-						}
-					],
+					"items": [],
 					"subfolders": [],
 					"name": "helpers"
+				},
+				{
+					"items": [],
+					"subfolders": [],
+					"name": "LevelSelect"
 				}
 			]
 		},
