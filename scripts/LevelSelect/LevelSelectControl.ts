@@ -1,5 +1,5 @@
-import type { LevelData } from "../Data/levelData";
-import type LevelSelectButtonInstance from "./LevelSelectButtonInstance";
+import type { LevelData } from "../Data/levelData.js";
+import type LevelSelectButtonInstance from "./LevelSelectButtonInstance.js";
 
 export type LoadLevelCallback = (runtime: IRuntime, lp: LayoutParameter) => void
 

@@ -1,4 +1,4 @@
-import { safeGetConstructFileJson } from "../helpers/FileUtiles";
+import { safeGetConstructFileJson } from "../helpers/FileUtiles.js";
 
 export async function LoadLevelDataAsync(runtime: IRuntime)
 {
@@ -7,7 +7,7 @@ export async function LoadLevelDataAsync(runtime: IRuntime)
 
 export class LevelData
 {
-	public Levels: Level[] = []
+	public levels: Level[] = []
 }
 
 export class Level {

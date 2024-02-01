@@ -5,8 +5,8 @@ import TowerLevelControl from "./towerLevelControl.js";
 import {LoadLevelDataAsync} from "./Data/levelData.js"
 import EnemyControl from "./objectTypes/EnemyBehavior.js";
 import TowerController from "./objectTypes/TowerController.js";
-import Globals from './Globals';
-import PointerHelper from "./helpers/PointerHelper";
+import Globals from './Globals.js';
+import PointerHelper from "./helpers/PointerHelper.js";
 import LevelSelectButtonInstance from "./LevelSelect/LevelSelectButtonInstance.js";
 
 
@@ -41,7 +41,7 @@ async function OnBeforeProjectStart(runtime: IRuntime)
 	const menuLayout = runtime.getLayout("MainMenu");
     const levelDataset = await LoadLevelDataAsync(runtime);
 
-
+    Globals.levelDataset = levelDataset;
 	Globals.levelSelect = new LevelSelectController(runtime, menuLayout, levelDataset, loadLevelCall);
 }
 
@@ -92,7 +92,7 @@ function OnTap(pointerEvent: PointerEvent, runtime: IRuntime)
 }
 
 const LoadLevel = (runtime: IRuntime, layout: ILayout, levelNumber: number) =>{
-	const levelData = Globals.levelDataset!.Levels[levelNumber]
+	const levelData = Globals.levelDataset!.levels[levelNumber]
 	Globals.towerLevelControl = new TowerLevelControl(runtime, layout, levelData);
 	Globals.towerLevelControl.SetupLevel();
 }

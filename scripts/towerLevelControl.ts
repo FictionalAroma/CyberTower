@@ -1,5 +1,5 @@
-import type { Level } from "./Data/levelData";
-import EnemyControl from './objectTypes/EnemyBehavior';
+import type { Level } from "./Data/levelData.js";
+import EnemyControl from './objectTypes/EnemyBehavior.js';
 
 export default class TowerLevelControl {
     runtime: IRuntime;
@@ -15,8 +15,8 @@ export default class TowerLevelControl {
     currentMoney: number = 0;
     currentLives: number = 0;
     gameOverHit: boolean = false;
-    TowerUpgradePanel: any;
-    currentTapDelay: any;
+    TowerUpgradePanel: any | null;
+    currentTapDelay: number = 0;
     constructor(runtime: IRuntime, layout: ILayout, level: Level) {
         this.runtime = runtime;
         this.layout = layout;
@@ -48,7 +48,10 @@ export default class TowerLevelControl {
         this.runtime.objects.Enemy.removeEventListener("instancecreate", this.SetupEnemy);
     };
 
-    SetupEnemy = (e: ObjectClassInstanceCreateEvent<any>) => e.instance.setup(this);
+    SetupEnemy = (e: ObjectClassInstanceCreateEvent<InstanceType.Enemy>) => {
+        const realInstance = e.instance as EnemyControl;
+        realInstance?.setup(this);
+    }
 
 
     OnTap = (pointerEvent: PointerEvent) => {
@@ -108,7 +111,9 @@ export default class TowerLevelControl {
                     }
                 }
             }
-        } else {
+        } 
+        else {
+
         }
     };
 

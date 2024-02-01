@@ -1,4 +1,4 @@
-import type TowerLevelControl from "../towerLevelControl";
+import type TowerLevelControl from "../towerLevelControl.js";
 
 export type EnemyControlEvent = ((en: EnemyControl) => void);
 

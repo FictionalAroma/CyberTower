@@ -1,4 +1,4 @@
-import { safeGetConstructFileJson, safeJsonParse } from "../helpers/FileUtiles";
+import { safeGetConstructFileJson, safeJsonParse } from "../helpers/FileUtiles.js";
 
 export function LoadPlayerDataAsync(runtime: IRuntime) : Promise<PlayerData>
 {
