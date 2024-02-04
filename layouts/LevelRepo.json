@@ -381,7 +381,7 @@
 					}
 				},
 				{
-					"type": "basicTower2",
+					"type": "BasicTower2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

@@ -1,4 +1,4 @@
-export default class TowerController extends ISpriteInstance
+export default class TowerController extends InstanceType.Towers
 {
     
 }

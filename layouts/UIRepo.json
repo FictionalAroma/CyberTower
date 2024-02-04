@@ -89,7 +89,7 @@
 						"bottom-margin": 16,
 						"edges": "stretch",
 						"fill": "stretch",
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "center",
 						"seams": "overlap"
 					},
@@ -312,6 +312,16 @@
 					"uid": 843269,
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 0.75,
+								"luminosity": 0.75
+							}
+						}
+					},
 					"world": {
 						"x": 139.42976127183147,
 						"y": 219.62050128251784,
@@ -341,6 +351,16 @@
 					"uid": 240515,
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"AdjustHSL": {
+							"isEnabled": false,
+							"parameters": {
+								"hue": 0,
+								"saturation": 0.75,
+								"luminosity": 0.75
+							}
+						}
+					},
 					"world": {
 						"x": 59.79039897675091,
 						"y": 220.3718236726894,

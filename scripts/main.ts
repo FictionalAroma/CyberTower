@@ -8,6 +8,8 @@ import TowerController from "./objectTypes/TowerController.js";
 import Globals from './Globals.js';
 import PointerHelper from "./helpers/PointerHelper.js";
 import LevelSelectButtonInstance from "./LevelSelect/LevelSelectButtonInstance.js";
+import TowerUpgradePanel from "./objectTypes/TowerUpgradePanel.js";
+import PanelMenuButton from "./objectTypes/PanelMenuButton.js";
 
 
 runOnStartup(async runtime =>
@@ -58,11 +60,19 @@ async function ConfigureCustomTypes(runtime:IRuntime)
         },
         {
             ObjectType: TowerController,
-            ConstructObjectNames: [runtime.objects.basicTower, runtime.objects.basicTower],
+            ConstructObjectNames: [runtime.objects.basicTower, runtime.objects.BasicTower2],
         },
         {
             ObjectType: LevelSelectButtonInstance,
             ConstructObjectNames: [runtime.objects.LevelSelectButton],
+        },
+        {
+            ObjectType: TowerUpgradePanel,
+            ConstructObjectNames: [runtime.objects.TowerUpgradePanel],
+        },
+        {
+            ObjectType: PanelMenuButton,
+            ConstructObjectNames: [runtime.objects.TowerUpgradeButton, runtime.objects.TowerSellButton],
         },
     ];
 	customTypeMapping.forEach(tm => {

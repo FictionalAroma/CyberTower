@@ -1,5 +1,10 @@
 import type { Level } from "./Data/levelData.js";
+import type IMoneySubscriber from "./Interfaces/IMoneySubscriber.js";
 import EnemyControl from './objectTypes/EnemyBehavior.js';
+import type IPanelMenu from "./objectTypes/IPanelMenu.js";
+import type TowerController from "./objectTypes/TowerController.js";
+import type TowerUpgradePanel from "./objectTypes/TowerUpgradePanel.js";
+import {getProperty}from "./helpers/reflectionHelper.js"
 
 export default class TowerLevelControl {
     runtime: IRuntime;
@@ -9,26 +14,29 @@ export default class TowerLevelControl {
     gridLayer: IAnyProjectLayer | null;
     tilemap: ITilemapInstance | null = null;
     spawnPoint: InstanceType.SpawnPoint | null = null;
-    TowerMap: boolean[][] | null = null;
+    TowerMap: InstanceType.Towers[][] | null[][] | undefined = undefined;
     livesDisplay: InstanceType.LivesValue | null = null;
     moneyDisplay: InstanceType.LivesValue | null = null;
     currentMoney: number = 0;
     currentLives: number = 0;
     gameOverHit: boolean = false;
-    TowerUpgradePanel: any | null;
+    TowerUpgradePanel: TowerUpgradePanel | null = null;
+    currentOpenPanel: IPanelMenu | null = null;
     currentTapDelay: number = 0;
+    moneyNotifers: IMoneySubscriber[];
     constructor(runtime: IRuntime, layout: ILayout, level: Level) {
         this.runtime = runtime;
         this.layout = layout;
         this.level = level;
         this.towerLayer = layout.getLayer(2);
         this.gridLayer = layout.getLayer(0);
+        this.moneyNotifers = [];
     }
 
     SetupLevel = () => {
         this.tilemap = this.runtime.objects.Tilemap.getFirstInstance();
         this.spawnPoint = this.runtime.objects.SpawnPoint.getFirstInstance();
-        this.TowerMap = makeArray(this.tilemap!.mapDisplayWidth, this.tilemap!.mapDisplayHeight, false);
+        this.TowerMap = makeArray(this.tilemap!.mapDisplayWidth, this.tilemap!.mapDisplayHeight, null);
 
         this.livesDisplay = this.runtime.objects.LivesValue.getFirstInstance();
         this.moneyDisplay = this.runtime.objects.MoneyValue.getFirstInstance();
@@ -40,8 +48,30 @@ export default class TowerLevelControl {
         this.gameOverHit = false;
 
         this.TowerUpgradePanel = this.runtime.objects.TowerUpgradePanel.getFirstInstance();
+        this.TowerUpgradePanel?.setup(this.TowerUpgrade, this.TowerSell);
+        this.moneyNotifers = [this.TowerUpgradePanel!];
 
         this.UpdateInfoDisplay();
+    };
+    TowerUpgrade = (tower: TowerController) => {
+        if(tower.instVars.UpgradeCost <= this.currentMoney)
+        {
+            const key = tower.instVars.UpgradeTemplateName as keyof IConstructProjectObjects;
+
+            const obj = getProperty(this.runtime.objects, key) as IObjectType<IWorldInstance>;
+            obj.createInstance(this.towerLayer!.name, tower.x, tower.y, true, tower.instVars.UpgradeTemplateName);
+            this.UpdateMoney(-tower.instVars.UpgradeCost)
+            tower.destroy();
+        }
+        this.hideCurrentPanel();
+        
+    };
+
+
+    TowerSell = (tower: TowerController) => {
+        this.UpdateMoney(10);
+        tower.destroy();
+        this.hideCurrentPanel();
     };
 
     Teardown = () => {
@@ -51,20 +81,28 @@ export default class TowerLevelControl {
     SetupEnemy = (e: ObjectClassInstanceCreateEvent<InstanceType.Enemy>) => {
         const realInstance = e.instance as EnemyControl;
         realInstance?.setup(this);
-    }
-
+    };
 
     OnTap = (pointerEvent: PointerEvent) => {
         if (this.gameOverHit || this.runtime.globalVars.Paused) return;
- 
+
         let mouseXYAr = this.towerLayer!.cssPxToLayer(pointerEvent.clientX, pointerEvent.clientY);
+
+        if (this.currentOpenPanel != null) {
+            if (this.currentOpenPanel.containsPoint(mouseXYAr[0], mouseXYAr[1])) {
+                this.currentOpenPanel.onClickHandler(mouseXYAr);
+            } else {
+                this.hideCurrentPanel();
+            }
+            return;
+        }
 
         // go through each family of objects to ignore
         // if we find we are clicking on litterally any, return out do nothing
         const familiesToIgnoreIfClick = [
             this.runtime.objects.UITextButtons,
             this.runtime.objects.UIButtons,
-            this.runtime.objects.UIOverlays,
+            this.runtime.objects.GamePanels,
         ];
 
         // do an any of families has any clicked items, if yes, bail method
@@ -86,8 +124,9 @@ export default class TowerLevelControl {
         }
 
         const towers = this.runtime.objects.Towers.getAllInstances();
-
-        const foundTower = towers.find((s) => s.containsPoint(mouseXYAr[0], mouseXYAr[1]));
+        let foundTower: InstanceType.Towers | null | undefined = towers.find((s) =>
+            s.containsPoint(mouseXYAr[0], mouseXYAr[1])
+        );
         if (foundTower == null) {
             const tilemap = this.tilemap!;
             mouseXYAr = this.gridLayer!.cssPxToLayer(pointerEvent.clientX, pointerEvent.clientY);
@@ -96,24 +135,26 @@ export default class TowerLevelControl {
                 const tileSizeY = tilemap.tileHeight;
 
                 const cellCoords = [Math.floor(mouseXYAr[0] / tileSizeX), Math.floor(mouseXYAr[1] / tileSizeY)];
-                const towerMapResult = this.TowerMap![cellCoords[0]][cellCoords[1]];
-                if (towerMapResult != true) {
+                foundTower = this.TowerMap![cellCoords[0]][cellCoords[1]];
+                if (foundTower == null) {
                     if (this.currentMoney >= 10) {
                         this.UpdateMoney(-10);
-                        this.runtime.objects.basicTower.createInstance(
+                        const createdObject = this.runtime.objects.basicTower.createInstance(
                             2,
                             cellCoords[0] * tileSizeX + tileSizeX / 2,
                             cellCoords[1] * tileSizeY + tileSizeY / 2,
                             true,
                             ""
                         );
-                        this.TowerMap![cellCoords[0]][cellCoords[1]] = true;
+                        this.TowerMap![cellCoords[0]][cellCoords[1]] = createdObject;
                     }
                 }
             }
-        } 
-        else {
+        }
 
+        if (foundTower != null) {
+            this.TowerUpgradePanel!.show(foundTower);
+            this.currentOpenPanel = this.TowerUpgradePanel;
         }
     };
 
@@ -138,9 +179,15 @@ export default class TowerLevelControl {
         }
     };
 
+    private hideCurrentPanel() {
+        this.currentOpenPanel?.hide();
+        this.currentOpenPanel = null;
+    }
+
     UpdateMoney(amountToAdd: number) {
         this.currentMoney += amountToAdd;
         this.UpdateInfoDisplay();
+        this.moneyNotifers.forEach((subscriber) => subscriber.onMoneyUpdated(this.currentMoney));
     }
 
     UpdateInfoDisplay() {

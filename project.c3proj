@@ -188,6 +188,13 @@
 			"name": "Glow horizontal",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "4thzevzzjx5",
@@ -220,7 +227,7 @@
 				"items": [
 					"basicTower",
 					"Bullet",
-					"basicTower2"
+					"BasicTower2"
 				],
 				"subfolders": [],
 				"name": "Towers"
@@ -319,7 +326,8 @@
 			"Bullets",
 			"UIButtons",
 			"UITextButtons",
-			"UIOverlays"
+			"GamePanels",
+			"PanelButtons"
 		],
 		"subfolders": []
 	},
@@ -369,28 +377,166 @@
 					"script-info": {
 						"purpose": "imports-for-events"
 					}
+				},
+				{
+					"name": "Globals.js",
+					"type": "application/javascript",
+					"sid": 655906525046033,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "towerLevelControl.js",
+					"type": "application/javascript",
+					"sid": 399176409867426,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
 				{
-					"items": [],
+					"items": [
+						{
+							"name": "levelData.js",
+							"type": "application/javascript",
+							"sid": 791511072184591,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "playerData.js",
+							"type": "application/javascript",
+							"sid": 360531197714769,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
 					"subfolders": [],
 					"name": "Data"
 				},
 				{
-					"items": [],
+					"items": [
+						{
+							"name": "EnemyBehavior.js",
+							"type": "application/javascript",
+							"sid": 128880958951783,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PanelMenu.js",
+							"type": "application/javascript",
+							"sid": 224420158740663,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PanelMenuButton.js",
+							"type": "application/javascript",
+							"sid": 718685718794005,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TowerController.js",
+							"type": "application/javascript",
+							"sid": 131586567436406,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "TowerUpgradePanel.js",
+							"type": "application/javascript",
+							"sid": 321772290251891,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "IPanelMenu.js",
+							"type": "application/javascript",
+							"sid": 425296589892695,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
 					"subfolders": [],
 					"name": "objectTypes"
 				},
 				{
-					"items": [],
+					"items": [
+						{
+							"name": "FileUtiles.js",
+							"type": "application/javascript",
+							"sid": 304983473745443,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "PointerHelper.js",
+							"type": "application/javascript",
+							"sid": 218549266177111,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "reflectionHelper.js",
+							"type": "application/javascript",
+							"sid": 205743450892468,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
 					"subfolders": [],
 					"name": "helpers"
 				},
 				{
-					"items": [],
+					"items": [
+						{
+							"name": "LevelSelectButtonInstance.js",
+							"type": "application/javascript",
+							"sid": 519098130173141,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "LevelSelectControl.js",
+							"type": "application/javascript",
+							"sid": 631892206675450,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
 					"subfolders": [],
 					"name": "LevelSelect"
+				},
+				{
+					"items": [
+						{
+							"name": "IMoneySubscriber.js",
+							"type": "application/javascript",
+							"sid": 472377009817469,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Interfaces"
 				}
 			]
 		},

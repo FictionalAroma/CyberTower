@@ -1,0 +1,17 @@
+{
+	"name": "PanelButtons",
+	"plugin-id": "Sprite",
+	"sid": 640859511209345,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "hsladjust",
+			"name": "AdjustHSL"
+		}
+	],
+	"members": [
+		"TowerUpgradeButton",
+		"TowerSellButton"
+	]
+}
